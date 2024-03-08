@@ -117,6 +117,19 @@
             }
         }
     </style>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                window.location.href = 'ProviderSaveLocation.aspx?permission=true&latitude=' + latitude + '&longitude=' + longitude;
+            });
+        }
+</script>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -126,7 +139,7 @@
                 <br />
                 <br />
                 <a href="ProviderProfile.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Profile</a>
-                <a href="ProviderLocation.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Save Location</a>
+                <a href="ProviderLocationAccessConfirmation.aspx" id="saveLocationLink" >&nbsp;&nbsp;&nbsp;&nbsp;Save Location</a>
                 <a href="ProviderServiceRequest.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Requests</a>
                 <a href="ProviderHistory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;History</a>
                 <a href="ProviderDeleteAccount.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Delete Account</a>

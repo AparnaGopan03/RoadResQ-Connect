@@ -119,8 +119,10 @@
     <Content Include="js\jquery-3.4.1.min.js" />
     <Content Include="LogOut.aspx" />
     <Content Include="ProviderDeleteAccount.aspx" />
+    <Content Include="ProviderLocationAccessConfirmation.aspx" />
     <Content Include="ProviderProfile.aspx" />
     <Content Include="ProviderProfileUpdate.aspx" />
+    <Content Include="ProviderSaveLocation.aspx" />
     <Content Include="ProviderSignIn.aspx" />
     <Content Include="ProviderSignUp.aspx" />
     <Content Include="SignIn.aspx" />
@@ -227,6 +229,13 @@
       <DependentUpon>ProviderDeleteAccount.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="ProviderLocationAccessConfirmation.aspx.designer.vb">
+      <DependentUpon>ProviderLocationAccessConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderLocationAccessConfirmation.aspx.vb">
+      <DependentUpon>ProviderLocationAccessConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="ProviderProfile.aspx.designer.vb">
       <DependentUpon>ProviderProfile.aspx</DependentUpon>
     </Compile>
@@ -239,6 +248,13 @@
     </Compile>
     <Compile Include="ProviderProfileUpdate.aspx.vb">
       <DependentUpon>ProviderProfileUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ProviderSaveLocation.aspx.designer.vb">
+      <DependentUpon>ProviderSaveLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderSaveLocation.aspx.vb">
+      <DependentUpon>ProviderSaveLocation.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ProviderSignIn.aspx.designer.vb">

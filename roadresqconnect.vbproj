@@ -118,6 +118,9 @@
     <Content Include="js\custom.js" />
     <Content Include="js\jquery-3.4.1.min.js" />
     <Content Include="LogOut.aspx" />
+    <Content Include="ProviderDeleteAccount.aspx" />
+    <Content Include="ProviderProfile.aspx" />
+    <Content Include="ProviderProfileUpdate.aspx" />
     <Content Include="ProviderSignIn.aspx" />
     <Content Include="ProviderSignUp.aspx" />
     <Content Include="SignIn.aspx" />
@@ -215,6 +218,27 @@
     </Compile>
     <Compile Include="Home.aspx.vb">
       <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ProviderDeleteAccount.aspx.designer.vb">
+      <DependentUpon>ProviderDeleteAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderDeleteAccount.aspx.vb">
+      <DependentUpon>ProviderDeleteAccount.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ProviderProfile.aspx.designer.vb">
+      <DependentUpon>ProviderProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderProfile.aspx.vb">
+      <DependentUpon>ProviderProfile.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ProviderProfileUpdate.aspx.designer.vb">
+      <DependentUpon>ProviderProfileUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderProfileUpdate.aspx.vb">
+      <DependentUpon>ProviderProfileUpdate.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ProviderSignIn.aspx.designer.vb">

@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class ProviderSignIn
+Partial Public Class ProviderDeleteAccount
 
     '''<summary>
     '''Head1 control.
@@ -32,13 +32,40 @@ Partial Public Class ProviderSignIn
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''lblErrorMessage control.
+    '''btnYes control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblErrorMessage As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents btnYes As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnNo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnNo As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''pnlConfirmation control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlConfirmation As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''lblUsername control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblUsername As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''txtUsername control.
@@ -50,6 +77,15 @@ Partial Public Class ProviderSignIn
     Protected WithEvents txtUsername As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''lblPassword control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblPassword As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''txtPassword control.
     '''</summary>
     '''<remarks>
@@ -59,11 +95,11 @@ Partial Public Class ProviderSignIn
     Protected WithEvents txtPassword As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''btnLogin control.
+    '''btnSubmit control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnLogin As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnSubmit As Global.System.Web.UI.WebControls.Button
 End Class

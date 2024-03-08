@@ -20,7 +20,7 @@ Public Class ProviderSaveLocation
             UpdateUserLocation(latitude, longitude, Username)
 
             ' Display success message
-            ClientScript.RegisterStartupScript(Me.GetType(), "alert", "<script>alert('Successfully saved location'); window.location.href = 'ProviderProfile.aspx';</script>")
+            ClientScript.RegisterStartupScript(Me.GetType(), "alert", "<script>alert('Successfully saved location'); </script>")
 
         Else
             ' Redirect back to profile page if permission is denied

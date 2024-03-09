@@ -1,4 +1,5 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ProviderProfile.aspx.vb" Inherits="roadresqconnect.ProviderProfile" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="TowingProfile.aspx.vb" Inherits="roadresqconnect.TowingProfile" %>
+
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -119,7 +120,7 @@
     </style>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <%--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -128,7 +129,7 @@
                 window.location.href = 'ProviderSaveLocation.aspx?permission=true&latitude=' + latitude + '&longitude=' + longitude;
             });
         }
-</script>
+</script>--%>
 
 </head>
 <body>
@@ -138,12 +139,12 @@
                 <br />
                 <br />
                 <br />
-                <a href="ProviderProfile.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Profile</a>
-                <a href="ProviderLocationAccessConfirmation.aspx" id="saveLocationLink" >&nbsp;&nbsp;&nbsp;&nbsp;Save Location</a>
-                 <a href="ProviderSetAvailability.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Set Availability</a>
-                <a href="ProviderServiceRequest.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Requests</a>
-                <a href="ProviderHistory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;History</a>
-                <a href="ProviderDeleteAccount.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Delete Account</a>
+                <a href="TowingProfile.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Profile</a>
+                <a href="TowingLocationAccessConfirmation.aspx" id="saveLocationLink" >&nbsp;&nbsp;&nbsp;&nbsp;Save Location</a>
+                 <a href="TowingSetAvailability.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Set Availability</a>
+                <a href="TowingServiceRequest.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Requests</a>
+                <a href="TowingHistory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;History</a>
+                <a href="TowingDeleteAccount.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Delete Account</a>
                 <a href="Logout.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Logout</a>
             </div>
 
@@ -173,30 +174,30 @@
                     <label>Date of Birth:</label>
                     <span><asp:Label ID="lblDOB" runat="server" Text=""></asp:Label></span>
                 </div>
-                <div class="profile-info">
+                <%--<div class="profile-info">
                     <label>Gender:</label>
                     <span><asp:Label ID="lblGender" runat="server" Text=""></asp:Label></span>
-                </div>
+                </div>--%>
                 <div class="profile-info">
-                    <label>Address:</label>
+                    <label>Service Center:</label>
                     <span><asp:Label ID="lblAddress" runat="server" Text=""></asp:Label></span>
                 </div>
                 <div class="profile-info">
                     <label>Contact Number:</label>
                     <span><asp:Label ID="lblContactNumber" runat="server" Text=""></asp:Label></span>
                 </div>
-                <div class="profile-info">
+                <%--<div class="profile-info">
                     <label>Years of Experience:</label>
                     <span><asp:Label ID="lblExperience" runat="server" Text=""></asp:Label></span>
                 </div>
                 <div class="profile-info">
                     <label>Service Area:</label>
                     <span><asp:Label ID="lblarea" runat="server" Text=""></asp:Label></span>
-                </div>
+                </div>--%>
                 <br />
-                <div class="profile-info">
+                <%--<div class="profile-info">
                     <asp:Button ID="btnUpdate" runat="server" Text="Update Profile" OnClientClick="return confirm('Are you sure you want to update your profile?');" OnClick="btnUpdate_Click" BackColor="Coral" ForeColor="Black" Height="50px" Width="150px" />
-                </div>
+                </div>--%>
             </div>
         </div>
 

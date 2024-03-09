@@ -9,6 +9,7 @@ Public Class roadresq
         Dim str As String = ConfigurationManager.ConnectionStrings("constr").ConnectionString
         con.ConnectionString = str
         con.Open()
+
         Return con
     End Function
 End Class

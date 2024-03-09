@@ -22,6 +22,7 @@ Public Class ProviderSaveLocation
             ' Display success message
             ClientScript.RegisterStartupScript(Me.GetType(), "alert", "<script>alert('Successfully saved location'); </script>")
 
+
         Else
             ' Redirect back to profile page if permission is denied
             Response.Redirect("ProviderProfile.aspx")

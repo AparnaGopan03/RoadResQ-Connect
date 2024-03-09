@@ -1,11 +1,9 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ProviderSignIn.aspx.vb" Inherits="roadresqconnect.ProviderSignIn" %>
-
-
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="TowingSignIn.aspx.vb" Inherits="roadresqconnect.TowingSignIn" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>Provider Login</title>
+    <title>Towing Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,7 +35,7 @@
 
         .provider-container {
             flex: 1;
-            background: url('https://img.freepik.com/premium-vector/car-service-illustration-concept_701961-6069.jpg?size=626&ext=jpg&ga=GA1.1.849587236.1658678723&semt=ais') center/cover no-repeat;
+            background: url('https://th.bing.com/th/id/OIP.TwKrH_R2QIARj_e-GgG5hgHaFL?w=253&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7') center/cover no-repeat;
         }
 
         h2 {
@@ -77,7 +75,7 @@
     <form id="form1" runat="server">
         <div class="login-container">
             <div class="form-container">
-                <h2>Provider Login</h2>
+                <h2>Towing Login</h2>
                 <asp:Label ID="lblErrorMessage" runat="server" ForeColor="Red" Visible="true"></asp:Label>
                 <br />
                 <asp:TextBox ID="txtUsername" runat="server" placeholder="Username"></asp:TextBox>
@@ -91,3 +89,4 @@
     </form>
 </body>
 </html>
+

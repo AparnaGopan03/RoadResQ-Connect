@@ -139,7 +139,7 @@
                 <br />
                 <br />
                 <a href="ProviderProfile.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Profile</a>
-                <a href="ProviderLocationAccessConfirmation.aspx" id="saveLocationLink" >&nbsp;&nbsp;&nbsp;&nbsp;Save Location</a>
+                <a href="ProviderLocationAccessConfirmation.aspx" >&nbsp;&nbsp;&nbsp;&nbsp;Save Location</a>
                  <a href="ProviderSetAvailability.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Set Availability</a>
                 <a href="ProviderServiceRequest.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Requests</a>
                 <a href="ProviderHistory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;History</a>

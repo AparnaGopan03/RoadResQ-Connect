@@ -240,7 +240,7 @@
     </Compile>
     <Compile Include="ProviderLocationAccessConfirmation.aspx.vb">
       <DependentUpon>ProviderLocationAccessConfirmation.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ProviderProfile.aspx.designer.vb">
       <DependentUpon>ProviderProfile.aspx</DependentUpon>
@@ -261,7 +261,7 @@
     </Compile>
     <Compile Include="ProviderSaveLocation.aspx.vb">
       <DependentUpon>ProviderSaveLocation.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Service.aspx.designer.vb">
       <DependentUpon>Service.aspx</DependentUpon>

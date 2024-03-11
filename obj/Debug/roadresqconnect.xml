@@ -6,7 +6,103 @@ roadresqconnect
 </name>
 </assembly>
 <members>
-<member name="F:roadresqconnect.AdminDashboard.form1">
+<member name="F:roadresqconnect.CustomerServiceRequest.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceRequest.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceRequest.assistanceTypeDropDown">
+	<summary>
+assistanceTypeDropDown control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceRequest.vehicleTypeTextBox">
+	<summary>
+vehicleTypeTextBox control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceRequest.makeTextBox">
+	<summary>
+makeTextBox control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceRequest.modelTextBox">
+	<summary>
+modelTextBox control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceRequest.yearTextBox">
+	<summary>
+yearTextBox control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceRequest.licensePlateTextBox">
+	<summary>
+licensePlateTextBox control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceRequest.colorTextBox">
+	<summary>
+colorTextBox control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceRequest.latitudeHiddenField">
+	<summary>
+latitudeHiddenField control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceRequest.longitudeHiddenField">
+	<summary>
+longitudeHiddenField control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceRequest.Button1">
+	<summary>
+Button1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.AdminDashboard.form1">
 	<summary>
 form1 control.
 </summary>
@@ -729,6 +825,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:roadresqconnect.ProviderProfile.btnUpdate">
 	<summary>
 btnUpdate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.ProviderProfile.btnUpdate1">
+	<summary>
+btnUpdate1 control.
 </summary>
 	<remarks>
 Auto-generated field.

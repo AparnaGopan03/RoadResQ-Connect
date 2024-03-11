@@ -39,6 +39,15 @@ Public Class ProviderProfile
     Protected Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Response.Redirect("ProviderProfileUpdate.aspx")
     End Sub
+
+    
+    Protected Sub btnUpdate1_Click(sender As Object, e As EventArgs) Handles btnUpdate1.Click
+        ' Client-side script to prompt for location access
+        ClientScript.RegisterStartupScript(Me.GetType(), "confirm", "<script>if (confirm('Do you want to give access to your location?')) {window.location.href = 'ProviderSaveLocation.aspx';}</script>")
+
+    End Sub
+
+
 End Class
 
 

@@ -86,14 +86,14 @@ Public Class ProviderSaveLocation
                 UpdateUserLocation(latitude, longitude, username)
 
                 ' Display success message
-                ClientScript.RegisterStartupScript(Me.GetType(), "alert", "<script>alert('Successfully saved location');window.location.href = 'ProviderProfile.aspx';</script>")
+                ClientScript.RegisterStartupScript(Me.GetType(), "alert", "<script>alert('Successfully saved location');window.location.href = 'Provider.aspx';</script>")
             Else
                 ' Redirect back to profile page if username is not found
-                Response.Redirect("ProviderProfile.aspx")
+                Response.Redirect("ProviderSignIn.aspx")
             End If
-        Else
-            ' Redirect back to profile page if permission is denied or if it's a postback
-            Response.Redirect("ProviderProfile.aspx")
+            'Else
+            '    ' Redirect back to profile page if permission is denied or if it's a postback
+            '    Response.Redirect("ProviderProfile.aspx")
         End If
     End Sub
 
@@ -108,7 +108,7 @@ Public Class ProviderSaveLocation
     End Function
 
     Private Sub UpdateUserLocation(latitude As String, longitude As String, username As String)
-        ' Your database connection and query to update location
+        ' Your database connection and query to update location   
 
         Dim query As String = "UPDATE ServiceProvider SET Latitude = @latitude, Longitude = @longitude WHERE Username = @username"
 

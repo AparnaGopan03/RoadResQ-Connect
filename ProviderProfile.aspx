@@ -116,6 +116,22 @@
                 width: 100%;
             }
         }
+
+
+        button {
+    /* Add your button styling here */
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: black;
+}
+
     </style>
 
 
@@ -139,8 +155,9 @@
                 <br />
                 <br />
                 <a href="ProviderProfile.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Profile</a>
-                <a href="ProviderLocationAccessConfirmation.aspx" >&nbsp;&nbsp;&nbsp;&nbsp;Save Location</a>
-                 <a href="ProviderSetAvailability.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Set Availability</a>
+                <a href="ProviderLocationAccessConfirmation.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Save Location</a>
+                
+                <a href="ProviderSetAvailability.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Set Availability</a>
                 <a href="ProviderServiceRequest.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Requests</a>
                 <a href="ProviderHistory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;History</a>
                 <a href="ProviderDeleteAccount.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Delete Account</a>
@@ -196,6 +213,8 @@
                 <br />
                 <div class="profile-info">
                     <asp:Button ID="btnUpdate" runat="server" Text="Update Profile" OnClientClick="return confirm('Are you sure you want to update your profile?');" OnClick="btnUpdate_Click" BackColor="Coral" ForeColor="Black" Height="50px" Width="150px" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnUpdate1" runat="server" Text="Save Location" OnClick="btnUpdate1_Click" BackColor="Coral" ForeColor="Black" Height="50px" Width="150px" />
                 </div>
             </div>
         </div>

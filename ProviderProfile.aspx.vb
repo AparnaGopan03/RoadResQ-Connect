@@ -41,11 +41,12 @@ Public Class ProviderProfile
     End Sub
 
     
-    Protected Sub btnUpdate1_Click(sender As Object, e As EventArgs) Handles btnUpdate1.Click
-        ' Client-side script to prompt for location access
-        ClientScript.RegisterStartupScript(Me.GetType(), "confirm", "<script>if (confirm('Do you want to give access to your location?')) {window.location.href = 'ProviderSaveLocation.aspx';}</script>")
+    'Protected Sub btnUpdate1_Click(sender As Object, e As EventArgs) Handles btnUpdate1.Click
+    '    ' Client-side script to prompt for location access
+    '    ClientScript.RegisterStartupScript(Me.GetType(), "confirm", "<script>if (confirm('Do you want to give access to your location?')) {window.location.href = 'ProviderSaveLocation.aspx';}</script>")
 
-    End Sub
+    'End Sub
+
 
 
 End Class

@@ -212,6 +212,24 @@ Partial Public Class ProviderSignUp
     Protected WithEvents txtServiceArea As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''lbl control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''assistanceTypeDropDown control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents assistanceTypeDropDown As Global.System.Web.UI.HtmlControls.HtmlSelect
+
+    '''<summary>
     '''btnSubmit control.
     '''</summary>
     '''<remarks>

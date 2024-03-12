@@ -10,7 +10,7 @@
     End Sub
 
     Protected Sub ProviderButton_Click(sender As Object, e As EventArgs) Handles ProviderButton.Click
-        Response.Redirect("Service.aspx")
+        Response.Redirect("ProviderSignIn.aspx")
     End Sub
 
    

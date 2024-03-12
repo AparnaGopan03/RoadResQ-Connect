@@ -19,7 +19,7 @@ Public Class ProviderSignUp
         Dim contactNo As String = txtContactNo.Text
         Dim yearsOfExperience As Integer = Integer.Parse(txtYearsOfExperience.Text)
         Dim serviceArea As String = txtServiceArea.Text
-
+        Dim assistanceType As String = assistanceTypeDropDown.Value
 
         ' Validate email using a regular expression
         If Not IsValidEmail(email) Then
@@ -35,12 +35,16 @@ Public Class ProviderSignUp
             Return
         End If
 
-
+        If UsernameExists(username) Then
+            ' Display an error message
+            Response.Write("<script>alert('Username already exists. Please choose a different username.');</script>")
+            Return
+        End If
 
         ' Insert mechanic data into database
         Dim connectionString As String = "YourConnectionString"
 
-        Dim query As String = "INSERT INTO ServiceProvider (Email, Username, Password, Name, DOB, Gender, Address, ContactNumber, YearsofExperience, ServiceArea) VALUES (@Email, @Username, @Password, @Name, @DOB, @Gender, @Address, @ContactNo, @YearsOfExperience, @ServiceArea)"
+        Dim query As String = "INSERT INTO ServiceProvider (Email, Username, Password, Name, DOB, Gender, Address, ContactNumber, YearsofExperience, ServiceArea,AssistanceType) VALUES (@Email, @Username, @Password, @Name, @DOB, @Gender, @Address, @ContactNo, @YearsOfExperience, @ServiceArea, @assistanceType)"
         Using command As New SqlCommand(query, co.connect())
             command.Parameters.AddWithValue("@Email", email)
             command.Parameters.AddWithValue("@Username", username)
@@ -52,6 +56,8 @@ Public Class ProviderSignUp
             command.Parameters.AddWithValue("@ContactNo", contactNo)
             command.Parameters.AddWithValue("@YearsOfExperience", yearsOfExperience)
             command.Parameters.AddWithValue("@ServiceArea", serviceArea)
+            command.Parameters.AddWithValue("@assistanceType", assistanceType)
+
 
             command.ExecuteNonQuery()
         End Using
@@ -72,6 +78,20 @@ Public Class ProviderSignUp
         Dim contactNumberPattern As String = "^\d{10}$" ' Assumes a 10-digit contact number
         Return System.Text.RegularExpressions.Regex.IsMatch(contactNumber, contactNumberPattern)
     End Function
+
+    Private Function UsernameExists(username As String) As Boolean
+        ' Check if the username already exists in the database
+
+        Dim query As String = "SELECT COUNT(*) FROM ServiceProvider WHERE Username = @Username"
+
+        Using command As New SqlCommand(query, co.connect())
+            command.Parameters.AddWithValue("@Username", username)
+            Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+            Return count > 0
+        End Using
+
+    End Function
+
 End Class
 
 

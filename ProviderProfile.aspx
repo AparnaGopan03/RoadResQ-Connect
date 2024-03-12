@@ -136,15 +136,55 @@ button:hover {
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <script>
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                var latitude = position.coords.latitude;
-                var longitude = position.coords.longitude;
-                window.location.href = 'ProviderSaveLocation.aspx?permission=true&latitude=' + latitude + '&longitude=' + longitude;
+        function getLocationAndSave() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(saveLocation, showError);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function saveLocation(position) {
+            // Send the location data to the server using AJAX
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            // Assuming you're using jQuery for AJAX
+            $.ajax({
+                type: "POST",
+                url: "ProviderSaveLocation.aspx/SaveUserLocation",
+                data: JSON.stringify({ latitude: latitude, longitude: longitude }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    alert("Location saved successfully.");
+                },
+                error: function () {
+                    alert("Failed to save location.");
+                }
             });
         }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Location information is unavailable.");
+                    break;
+                case error.TIMEOUT:
+                    alert("The request to get user location timed out.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred.");
+                    break;
+            }
+        }
 </script>
+
 
 </head>
 <body>
@@ -155,7 +195,7 @@ button:hover {
                 <br />
                 <br />
                 <a href="ProviderProfile.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Profile</a>
-                <a href="ProviderLocationAccessConfirmation.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Save Location</a>
+                <%--<a href="ProviderLocationAccessConfirmation.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Save Location</a>--%>
                 
                 <a href="ProviderSetAvailability.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Set Availability</a>
                 <a href="ProviderServiceRequest.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Requests</a>
@@ -214,7 +254,9 @@ button:hover {
                 <div class="profile-info">
                     <asp:Button ID="btnUpdate" runat="server" Text="Update Profile" OnClientClick="return confirm('Are you sure you want to update your profile?');" OnClick="btnUpdate_Click" BackColor="Coral" ForeColor="Black" Height="50px" Width="150px" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnUpdate1" runat="server" Text="Save Location" OnClick="btnUpdate1_Click" BackColor="Coral" ForeColor="Black" Height="50px" Width="150px" />
+                   <%-- <asp:Button ID="btnUpdate1" runat="server" Text="Save Location" OnClick="btnUpdate1_Click"  />--%>
+                    <asp:Button ID="btnSaveLocation" runat="server" Text="Save Location" OnClientClick="getLocationAndSave(); return false; " BackColor="Coral" ForeColor="Black" Height="50px" Width="150px" />
+
                 </div>
             </div>
         </div>

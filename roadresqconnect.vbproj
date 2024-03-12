@@ -119,6 +119,7 @@
     <Content Include="js\custom.js" />
     <Content Include="js\jquery-3.4.1.min.js" />
     <Content Include="LogOut.aspx" />
+    <Content Include="ProviderBack.aspx" />
     <Content Include="ProviderDeleteAccount.aspx" />
     <Content Include="ProviderLocationAccessConfirmation.aspx" />
     <Content Include="ProviderProfile.aspx" />
@@ -234,6 +235,13 @@
     </Compile>
     <Compile Include="Home.aspx.vb">
       <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ProviderBack.aspx.designer.vb">
+      <DependentUpon>ProviderBack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderBack.aspx.vb">
+      <DependentUpon>ProviderBack.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ProviderDeleteAccount.aspx.designer.vb">

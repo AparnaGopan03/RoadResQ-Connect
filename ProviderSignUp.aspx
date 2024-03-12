@@ -174,6 +174,15 @@
             <asp:TextBox ID="txtServiceArea" runat="server"></asp:TextBox>
             <br />
 
+
+           
+        <asp:label for="assistanceTypeDropDown" id="lbl"  runat="server" Text="Type of Assistance:"></asp:label></asp:>
+        <select id="assistanceTypeDropDown" runat="server" class="form-control">
+            <option value="Towing">Towing</option>
+            <option value="Roadside Assistance">Roadside Assistance</option>
+        </select>
+   
+
             <asp:Button ID="btnSubmit" runat="server" Text="Submit"  class="control-button up" OnClick="btnSubmit_Click" />
         </div>
     </form>

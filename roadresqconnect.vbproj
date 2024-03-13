@@ -119,12 +119,12 @@
     <Content Include="js\custom.js" />
     <Content Include="js\jquery-3.4.1.min.js" />
     <Content Include="LogOut.aspx" />
-    <Content Include="ProviderBack.aspx" />
     <Content Include="ProviderDeleteAccount.aspx" />
     <Content Include="ProviderLocationAccessConfirmation.aspx" />
     <Content Include="ProviderProfile.aspx" />
     <Content Include="ProviderProfileUpdate.aspx" />
     <Content Include="ProviderSaveLocation.aspx" />
+    <Content Include="ProviderServiceRequest.aspx" />
     <Content Include="Service.aspx" />
     <Content Include="Services.aspx" />
     <Content Include="ProviderSetAvailability.aspx" />
@@ -181,7 +181,7 @@
     </Compile>
     <Compile Include="CustomerServiceRequest.aspx.vb">
       <DependentUpon>CustomerServiceRequest.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CustomerSignIn.aspx.designer.vb">
       <DependentUpon>CustomerSignIn.aspx</DependentUpon>
@@ -211,6 +211,7 @@
       <DependentUpon>Main.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Mechanic.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -235,13 +236,6 @@
     </Compile>
     <Compile Include="Home.aspx.vb">
       <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="ProviderBack.aspx.designer.vb">
-      <DependentUpon>ProviderBack.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ProviderBack.aspx.vb">
-      <DependentUpon>ProviderBack.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ProviderDeleteAccount.aspx.designer.vb">
@@ -279,6 +273,12 @@
       <DependentUpon>ProviderSaveLocation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="ProviderServiceRequest.aspx.designer.vb">
+      <DependentUpon>ProviderServiceRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderServiceRequest.aspx.vb">
+      <DependentUpon>ProviderServiceRequest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Service.aspx.designer.vb">
       <DependentUpon>Service.aspx</DependentUpon>
     </Compile>
@@ -286,6 +286,7 @@
       <DependentUpon>Service.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="ServiceRequest.vb" />
     <Compile Include="Services.aspx.designer.vb">
       <DependentUpon>Services.aspx</DependentUpon>
     </Compile>

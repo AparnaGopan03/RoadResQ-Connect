@@ -88,6 +88,7 @@
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
     <Content Include="CustomerDeleteAccount.aspx" />
+    <Content Include="CustomerHistory.aspx" />
     <Content Include="CustomerProfile.aspx" />
     <Content Include="CustomerProfileUpdate.aspx" />
     <Content Include="CustomerServiceRequest.aspx" />
@@ -160,6 +161,13 @@
     </Compile>
     <Compile Include="CustomerDeleteAccount.aspx.vb">
       <DependentUpon>CustomerDeleteAccount.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CustomerHistory.aspx.designer.vb">
+      <DependentUpon>CustomerHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerHistory.aspx.vb">
+      <DependentUpon>CustomerHistory.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CustomerProfile.aspx.designer.vb">
@@ -278,6 +286,7 @@
     </Compile>
     <Compile Include="ProviderServiceRequest.aspx.vb">
       <DependentUpon>ProviderServiceRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Service.aspx.designer.vb">
       <DependentUpon>Service.aspx</DependentUpon>

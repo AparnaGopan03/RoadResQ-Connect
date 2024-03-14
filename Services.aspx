@@ -8,7 +8,7 @@
 <head id="Head1" runat="server">
     <title>Services</title>
     <style>
-        body {
+        /*body {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,13 +16,13 @@
             margin: 0;
             background: linear-gradient(45deg, #ff7f50, white);
             font-family: Arial, sans-serif;
-        }
-        #container {
+        }*/
+        /*#container {
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-        }
+        }*/
         .heading {
             font-size: 36px;
             margin-bottom: 30px;

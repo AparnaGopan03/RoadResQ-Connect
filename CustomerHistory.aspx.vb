@@ -28,7 +28,7 @@ Public Class CustomerHistory
         Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
 
         ' Query to fetch service request history
-        Dim query As String = "SELECT sr.requestid AS RequestId, sr.status AS Status, sr.vehicletype AS VehicleType, sp.name AS MechanicName " &
+        Dim query As String = "SELECT sr.requestid AS RequestId, sr.status AS Status, sr.vehicletype AS VehicleType, sr.make As Make, sr.model As Model, sr.year As Year, sr.licenseplatenumber As LicensePlateNumber, sr.requesttime As RequestTime, sr.assistancetype As AssistanceType, sr.providerid As ProviderID, sp.name AS MechanicName, sp.contactnumber As Contactno " &
                               "FROM CServiceRequest sr " &
                               "INNER JOIN ServiceProvider sp ON sr.providerid = sp.providerid " &
                               "WHERE sr.customerid = @customerId"

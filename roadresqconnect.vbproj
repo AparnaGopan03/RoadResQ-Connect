@@ -120,6 +120,7 @@
     <Content Include="js\custom.js" />
     <Content Include="js\jquery-3.4.1.min.js" />
     <Content Include="LogOut.aspx" />
+    <Content Include="MapPage.aspx" />
     <Content Include="ProviderDeleteAccount.aspx" />
     <Content Include="ProviderLocationAccessConfirmation.aspx" />
     <Content Include="ProviderProfile.aspx" />
@@ -218,6 +219,13 @@
     <Compile Include="Main.Master.vb">
       <DependentUpon>Main.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MapPage.aspx.designer.vb">
+      <DependentUpon>MapPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MapPage.aspx.vb">
+      <DependentUpon>MapPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Mechanic.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

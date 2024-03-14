@@ -15,7 +15,7 @@
         <asp:BoundField DataField="RequestId" HeaderText="Request ID" />
         <asp:BoundField DataField="CustomerId" HeaderText="Customer ID" />
         <asp:BoundField DataField="CustomerName" HeaderText="Customer Name" />
-        <asp:BoundField DataField="CustomerEmail" HeaderText="Customer Email" />
+        <asp:BoundField DataField="Customercno" HeaderText="Customer Contact" />
         <asp:BoundField DataField="VehicleType" HeaderText="Vehicle Type" />
         <asp:BoundField DataField="Make" HeaderText="Make" />
         <asp:BoundField DataField="Model" HeaderText="Model" />
@@ -28,6 +28,8 @@
         <%# If(Eval("status") IsNot DBNull.Value, Eval("status"), "N/A") %>
     </ItemTemplate>
 </asp:TemplateField>
+
+        <asp:ButtonField ButtonType="Button" CommandName="ViewLocation" Text="View Location" />
 
         <asp:ButtonField ButtonType="Button" CommandName="Accept" Text="Accept" HeaderText="Accept" />
         <asp:ButtonField ButtonType="Button" CommandName="Reject" Text="Reject" HeaderText="Reject" />

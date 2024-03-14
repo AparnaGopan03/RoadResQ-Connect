@@ -14,7 +14,7 @@ Public Class ProviderServiceRequest
         Dim mechanicId As Integer = GetMechanicId()
 
         Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
-        Dim query As String = "SELECT sr.requestid, sr.customerid, c.name AS CustomerName, c.email AS CustomerEmail, sr.vehicletype, sr.make, sr.model, sr.year, sr.licenseplatenumber, sr.color, sr.requesttime, sr.status " &
+        Dim query As String = "SELECT sr.requestid, sr.customerid, c.name AS CustomerName, c.contactnumber AS Customercno, sr.vehicletype, sr.make, sr.model, sr.year, sr.licenseplatenumber, sr.color, sr.requesttime, sr.status " &
                               "FROM CServiceRequest sr " &
                               "INNER JOIN Customer c ON sr.customerid = c.customerid " &
                               "WHERE sr.providerid = @providerId"
@@ -101,6 +101,18 @@ Public Class ProviderServiceRequest
             ' Rebind the GridView to reflect the changes
             BindServiceRequests()
         End If
+
+        If e.CommandName = "ViewLocation" Then
+            ' Get the row index of the clicked button
+            Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+            ' Get the latitude and longitude from the row
+            Dim latitude As String = GridViewRequests.Rows(index).Cells(11).Text
+            Dim longitude As String = GridViewRequests.Rows(index).Cells(12).Text
+
+            ' Redirect to the map page with latitude and longitude parameters
+            Response.Redirect("MapPage.aspx?latitude=" & latitude & "&longitude=" & longitude)
+        End If
+
     End Sub
 
     Private Sub SetStatusInGridView(ByVal index As Integer, ByVal status As String)

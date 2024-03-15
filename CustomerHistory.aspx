@@ -5,6 +5,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+     <style>
+        /* Style for GridView */
+        #GridViewHistory {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #GridViewHistory th, #GridViewHistory td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #GridViewHistory th {
+            background-color: #FBCEB1; /* Lighter shade */
+        }
+
+        #GridViewHistory tr:nth-child(even) {
+            background-color:#E5E4E2; /*  shade */
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">

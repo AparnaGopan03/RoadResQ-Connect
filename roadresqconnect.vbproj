@@ -87,6 +87,7 @@
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
+    <Content Include="CustomerComplaint.aspx" />
     <Content Include="CustomerDeleteAccount.aspx" />
     <Content Include="CustomerHistory.aspx" />
     <Content Include="CustomerProfile.aspx" />
@@ -155,6 +156,13 @@
     </Compile>
     <Compile Include="AdminSignIn.aspx.vb">
       <DependentUpon>AdminSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CustomerComplaint.aspx.designer.vb">
+      <DependentUpon>CustomerComplaint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerComplaint.aspx.vb">
+      <DependentUpon>CustomerComplaint.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CustomerDeleteAccount.aspx.designer.vb">

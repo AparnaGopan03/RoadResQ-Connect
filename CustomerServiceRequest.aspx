@@ -82,7 +82,7 @@
         function showPosition(position) {
             var latitude = position.coords.latitude;
             var longitude = position.coords.longitude;
-            document.getElementById('locationStatus').innerHTML = "Location shared successfully (Latitude: " + latitude + ", Longitude: " + longitude + ")";
+            document.getElementById('locationStatus').innerHTML = "Location captured successfully";
             document.getElementById('<%= latitudeHiddenField.ClientID %>').value = latitude;
             document.getElementById('<%= longitudeHiddenField.ClientID %>').value = longitude;
         }

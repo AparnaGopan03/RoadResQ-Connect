@@ -44,16 +44,24 @@
         <asp:BoundField DataField="LicensePlateNumber" HeaderText="License Plate" />
         <asp:BoundField DataField="Color" HeaderText="Color" />
         <asp:BoundField DataField="RequestTime" HeaderText="Request Time" />
-        <asp:TemplateField HeaderText="Status">
+        <asp:TemplateField HeaderText="Request Status">
     <ItemTemplate>
         <%# If(Eval("status") IsNot DBNull.Value, Eval("status"), "N/A") %>
     </ItemTemplate>
 </asp:TemplateField>
+        <asp:BoundField DataField="CompletionStatus" HeaderText="Completion Status" />
+   
 
-        <asp:ButtonField ButtonType="Button" CommandName="ViewLocation" Text="View Location" />
+        <asp:ButtonField ButtonType="Button" CommandName="ViewLocation" Text="View Location" HeaderText="Location" />
 
         <asp:ButtonField ButtonType="Button" CommandName="Accept" Text="Accept" HeaderText="Accept" />
         <asp:ButtonField ButtonType="Button" CommandName="Reject" Text="Reject" HeaderText="Reject" />
+
+        <asp:TemplateField HeaderText="Completion">
+            <ItemTemplate>
+                <asp:Button ID="CompletionButton" runat="server" Text="Complete" CommandName="Complete" CommandArgument='<%# Container.DataItemIndex %>' />
+            </ItemTemplate>
+        </asp:TemplateField>
     </Columns>
 </asp:GridView>
 

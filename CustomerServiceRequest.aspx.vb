@@ -141,7 +141,7 @@ Public Class CustomerServiceRequest
 
         ' Establish database connection
         Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
-        Dim query As String = "SELECT DISTINCT providerid, assistancetype FROM ServiceProvider WHERE assistancetype = @assistanceType"
+        Dim query As String = "SELECT providerid, assistancetype FROM ServiceProvider WHERE assistancetype = @assistanceType"
 
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand(query, connection)

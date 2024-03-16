@@ -6,7 +6,55 @@ roadresqconnect
 </name>
 </assembly>
 <members>
-<member name="F:roadresqconnect.AdminDashboard.form1">
+<member name="F:roadresqconnect.CustomerServiceSearch.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceSearch.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceSearch.txtSearch">
+	<summary>
+txtSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceSearch.ddlAssistanceType">
+	<summary>
+ddlAssistanceType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceSearch.btnSearch">
+	<summary>
+btnSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerServiceSearch.mechanicsContainer">
+	<summary>
+mechanicsContainer control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.AdminDashboard.form1">
 	<summary>
 form1 control.
 </summary>

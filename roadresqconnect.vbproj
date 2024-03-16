@@ -93,6 +93,7 @@
     <Content Include="CustomerProfile.aspx" />
     <Content Include="CustomerProfileUpdate.aspx" />
     <Content Include="CustomerServiceRequest.aspx" />
+    <Content Include="CustomerServiceSearch.aspx" />
     <Content Include="CustomerSignIn.aspx" />
     <Content Include="CustomerSignUp.aspx" />
     <Content Include="images\about-carimg.jpg" />
@@ -199,6 +200,13 @@
     <Compile Include="CustomerServiceRequest.aspx.vb">
       <DependentUpon>CustomerServiceRequest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerServiceSearch.aspx.designer.vb">
+      <DependentUpon>CustomerServiceSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerServiceSearch.aspx.vb">
+      <DependentUpon>CustomerServiceSearch.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CustomerSignIn.aspx.designer.vb">
       <DependentUpon>CustomerSignIn.aspx</DependentUpon>

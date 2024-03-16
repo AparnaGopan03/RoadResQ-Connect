@@ -96,4 +96,7 @@ Public Class CustomerServiceSearch
         End If
     End Sub
 
+    Protected Sub btnSearch_Click1(sender As Object, e As EventArgs) Handles Button1.Click
+        Response.Redirect("CustomerProfile.aspx")
+    End Sub
 End Class

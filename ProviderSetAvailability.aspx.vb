@@ -48,4 +48,8 @@ Public Class ProviderSetAvailability
         lblAvailability.Text = availabilityStatus
 
     End Sub
+
+    Protected Sub btnAnotherButton_Click(sender As Object, e As EventArgs) Handles btnAnotherButton.Click
+        Response.Redirect("ProviderProfile.aspx")
+    End Sub
 End Class

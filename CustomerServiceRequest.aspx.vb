@@ -42,6 +42,18 @@ Public Class CustomerServiceRequest
             command.ExecuteNonQuery()
         End Using
 
+        ' Display success message
+        lblMessage.Text = "Request submitted successfully."
+        lblMessage.Visible = True
+
+        ' Clear input fields
+        vehicleTypeTextBox.Text = ""
+        makeTextBox.Text = ""
+        modelTextBox.Text = ""
+        yearTextBox.Text = ""
+        licensePlateTextBox.Text = ""
+        colorTextBox.Text = ""
+
         ' Fetch available mechanics from the database
         Dim mechanics As List(Of Mechanic) = GetAvailableMechanics(latitude, longitude)
 
@@ -216,4 +228,7 @@ Public Class CustomerServiceRequest
     End Function
 
 
+    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Response.Redirect("CustomerProfile.aspx")
+    End Sub
 End Class

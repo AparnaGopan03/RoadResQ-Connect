@@ -178,4 +178,7 @@ Public Class ProviderServiceRequest
         End Using
     End Sub
 
+    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Response.Redirect("ProviderProfile.aspx")
+    End Sub
 End Class

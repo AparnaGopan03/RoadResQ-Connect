@@ -66,4 +66,13 @@ Partial Public Class ProviderSetAvailability
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblAvailability As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''btnAnotherButton control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAnotherButton As Global.System.Web.UI.WebControls.Button
 End Class

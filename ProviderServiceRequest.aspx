@@ -25,12 +25,26 @@
         #GridViewRequests tr:nth-child(even) {
             background-color:#E5E4E2; /*  shade */
         }
+
+        .top-left-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    
+}
+
+         #Button2 {
+             background-color: #FF8066;
+         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-    
+     <asp:Button ID="Button2" runat="server" Text="Back To Profile" />
+        <br />
+        <br />
 <asp:GridView ID="GridViewRequests" runat="server" AutoGenerateColumns="False" OnRowCommand="GridViewRequests_RowCommand"  DataKeyNames="RequestId">
     <Columns>
         <asp:BoundField DataField="RequestId" HeaderText="Request ID" />

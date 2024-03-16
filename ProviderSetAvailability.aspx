@@ -61,6 +61,9 @@
             <asp:Label ID="lblAvailability0" runat="server" Text="Availability Status : " EnableViewState="true" ></asp:Label>
 
             <asp:Label ID="lblAvailability" runat="server" Text="" EnableViewState="true" ></asp:Label>
+            <br />
+            <br />
+            <asp:Button ID="btnAnotherButton" CssClass="btn" runat="server" Text="Back To profile" OnClick="btnAnotherButton_Click" />
 
         </div>
     </form>

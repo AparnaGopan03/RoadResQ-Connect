@@ -48,7 +48,7 @@
         font-size: 16px;
     }
 
-    #Button1 {
+    #Button1,#Button2 {
         padding: 12px 20px;
         background-color:  #ff9966;
         color: #fff;
@@ -146,7 +146,10 @@
         <asp:HiddenField ID="latitudeHiddenField" runat="server" />
         <asp:HiddenField ID="longitudeHiddenField" runat="server" />
     <div>
+        <asp:Label ID="lblMessage" runat="server" ForeColor="Red" Visible="false"></asp:Label>
         &nbsp;<asp:Button ID="Button1" runat="server" Text="Submit Request" />
+        <br /><br />
+        <asp:Button ID="Button2" runat="server" Text="Back To Profile" />
     </div>
     </form>
 </body>

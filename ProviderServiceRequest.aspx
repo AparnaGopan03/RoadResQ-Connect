@@ -76,6 +76,9 @@
                 <asp:Button ID="CompletionButton" runat="server" Text="Complete" CommandName="Complete" CommandArgument='<%# Container.DataItemIndex %>' />
             </ItemTemplate>
         </asp:TemplateField>
+
+         <asp:ButtonField ButtonType="Button" CommandName="Payment" Text="Payment Details" HeaderText="Payment" />
+   
     </Columns>
 </asp:GridView>
 

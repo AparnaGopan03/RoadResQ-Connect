@@ -60,6 +60,12 @@
         <asp:BoundField DataField="ProviderID" HeaderText="Provider ID" />
         <asp:BoundField DataField="MechanicName" HeaderText="Provider Name" />
        <asp:BoundField DataField="Contactno" HeaderText="Contact Number" />
+
+        <asp:TemplateField HeaderText="Actions">
+            <ItemTemplate>
+                <asp:Button ID="btnViewPayment" runat="server" Text=" Payment " CommandName="ViewPaymentDetails" CommandArgument='<%# Container.DataItemIndex %>' />
+            </ItemTemplate>
+        </asp:TemplateField>
     </Columns>
 </asp:GridView>
 

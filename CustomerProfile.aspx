@@ -127,9 +127,9 @@
                 <br />
                 <br />
                 <a href="CustomerProfile.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Profile</a>
-                <a href="CustomerServiceRequest.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Service Request</a>
+                <a href="CustomerServiceRequest.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Request for a Service</a>
                 <a href="CustomerServiceSearch.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Search by Service Area</a>
-                <a href="CustomerHistory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Service History</a>
+                <a href="CustomerHistory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Service Requests</a>
                 <a href="CustomerComplaint.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Complaint</a>
                 <a href="CustomerDeleteAccount.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Delete Account</a>
                 <a href="Logout.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Logout</a>

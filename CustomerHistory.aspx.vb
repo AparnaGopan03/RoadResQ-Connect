@@ -91,4 +91,17 @@ Public Class CustomerHistory
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Response.Redirect("CustomerProfile.aspx")
     End Sub
+
+    Protected Sub GridViewHistory_RowCommand(ByVal sender As Object, ByVal e As GridViewCommandEventArgs) Handles GridViewHistory.RowCommand
+        If e.CommandName = "ViewPaymentDetails" Then
+            ' Retrieve the RequestId from the CommandArgument
+            Dim requestId As String = e.CommandArgument.ToString()
+
+            ' Redirect to the PaymentDetailsPage with the RequestId as a query parameter
+            Response.Redirect("CustomerPaymentPage.aspx?RequestId=" & requestId)
+        End If
+    End Sub
+
+
+
 End Class

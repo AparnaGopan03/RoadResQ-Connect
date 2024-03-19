@@ -105,13 +105,33 @@ Public Class ProviderServiceRequest
         If e.CommandName = "ViewLocation" Then
             ' Get the row index of the clicked button
             Dim index As Integer = Convert.ToInt32(e.CommandArgument)
-            ' Get the latitude and longitude from the row
-            Dim latitude As String = GridViewRequests.Rows(index).Cells(11).Text
-            Dim longitude As String = GridViewRequests.Rows(index).Cells(12).Text
+
+            ' Assuming RequestID is the identifier stored in the GridView's row
+            Dim requestId As Integer = Convert.ToInt32(GridViewRequests.DataKeys(index).Value)
+
+            ' Query the ServiceRequest table to get latitude and longitude based on requestId
+            Dim latitude As String = ""
+            Dim longitude As String = ""
+
+            Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
+            ' Assume conn is your database connection object
+            Using conn As New SqlConnection(connectionString)
+                conn.Open()
+                Dim query As String = "SELECT Latitude, Longitude FROM CServiceRequest WHERE RequestID = @RequestId"
+                Using cmd As New SqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@RequestId", requestId)
+                    Dim reader As SqlDataReader = cmd.ExecuteReader()
+                    If reader.Read() Then
+                        latitude = reader("Latitude").ToString()
+                        longitude = reader("Longitude").ToString()
+                    End If
+                End Using
+            End Using
 
             ' Redirect to the map page with latitude and longitude parameters
             Response.Redirect("MapPage.aspx?latitude=" & latitude & "&longitude=" & longitude)
         End If
+
 
 
         If e.CommandName = "Complete" Then
@@ -126,6 +146,17 @@ Public Class ProviderServiceRequest
 
             ' Rebind the GridView to reflect the changes
             BindServiceRequests()
+        End If
+
+        If e.CommandName = "Payment" Then
+            ' Retrieve the index of the row from the CommandArgument
+            Dim rowIndex As Integer = Convert.ToInt32(e.CommandArgument)
+
+            ' Retrieve data from the GridView using the row index
+            Dim requestId As String = GridViewRequests.DataKeys(rowIndex).Value.ToString()
+
+            ' Redirect to another page for payment
+            Response.Redirect("PaymentDetailsPage.aspx?RequestId=" & requestId)
         End If
 
     End Sub
@@ -181,4 +212,6 @@ Public Class ProviderServiceRequest
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Response.Redirect("ProviderProfile.aspx")
     End Sub
+
+   
 End Class

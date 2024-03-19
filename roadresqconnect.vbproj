@@ -90,6 +90,7 @@
     <Content Include="CustomerComplaint.aspx" />
     <Content Include="CustomerDeleteAccount.aspx" />
     <Content Include="CustomerHistory.aspx" />
+    <Content Include="CustomerPaymentPage.aspx" />
     <Content Include="CustomerProfile.aspx" />
     <Content Include="CustomerProfileUpdate.aspx" />
     <Content Include="CustomerServiceRequest.aspx" />
@@ -123,6 +124,7 @@
     <Content Include="js\jquery-3.4.1.min.js" />
     <Content Include="LogOut.aspx" />
     <Content Include="MapPage.aspx" />
+    <Content Include="PaymentDetailsPage.aspx" />
     <Content Include="ProviderDeleteAccount.aspx" />
     <Content Include="ProviderLocationAccessConfirmation.aspx" />
     <Content Include="ProviderProfile.aspx" />
@@ -178,6 +180,13 @@
     </Compile>
     <Compile Include="CustomerHistory.aspx.vb">
       <DependentUpon>CustomerHistory.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPaymentPage.aspx.designer.vb">
+      <DependentUpon>CustomerPaymentPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPaymentPage.aspx.vb">
+      <DependentUpon>CustomerPaymentPage.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CustomerProfile.aspx.designer.vb">
@@ -268,6 +277,13 @@
     </Compile>
     <Compile Include="Home.aspx.vb">
       <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PaymentDetailsPage.aspx.designer.vb">
+      <DependentUpon>PaymentDetailsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentDetailsPage.aspx.vb">
+      <DependentUpon>PaymentDetailsPage.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ProviderDeleteAccount.aspx.designer.vb">

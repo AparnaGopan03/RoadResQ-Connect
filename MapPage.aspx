@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
    
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDh2X_xILaFLflYxsCbA3AgZRZzl89zVN0"></script>
 </head>
 
 
@@ -17,22 +17,23 @@
     
     </form>
 
-    <script>
-        function initializeMap(latitude, longitude) {
-            var mapOptions = {
-                center: new google.maps.LatLng(latitude, longitude),
-                zoom: 12
-            };
-            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+   <script>
+       function initializeMap(latitude, longitude) {
+           var mapOptions = {
+               center: new google.maps.LatLng(latitude, longitude),
+               zoom: 12
+           };
+           var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-            // Add marker for customer's location
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(latitude, longitude),
-                map: map,
-                title: 'Customer Location'
-            });
-        }
+           // Add marker for customer's location
+           var marker = new google.maps.Marker({
+               position: new google.maps.LatLng(latitude, longitude),
+               map: map,
+               title: 'Customer Location'
+           });
+       }
 </script>
+
 
 </body>
 </html>

@@ -125,6 +125,8 @@
     <Content Include="LogOut.aspx" />
     <Content Include="MapPage.aspx" />
     <Content Include="PaymentDetailsPage.aspx" />
+    <Content Include="PaymentFrom.aspx" />
+    <Content Include="PaymentSuccess.aspx" />
     <Content Include="ProviderDeleteAccount.aspx" />
     <Content Include="ProviderLocationAccessConfirmation.aspx" />
     <Content Include="ProviderProfile.aspx" />
@@ -284,6 +286,20 @@
     </Compile>
     <Compile Include="PaymentDetailsPage.aspx.vb">
       <DependentUpon>PaymentDetailsPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PaymentFrom.aspx.designer.vb">
+      <DependentUpon>PaymentFrom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentFrom.aspx.vb">
+      <DependentUpon>PaymentFrom.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PaymentSuccess.aspx.designer.vb">
+      <DependentUpon>PaymentSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentSuccess.aspx.vb">
+      <DependentUpon>PaymentSuccess.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ProviderDeleteAccount.aspx.designer.vb">

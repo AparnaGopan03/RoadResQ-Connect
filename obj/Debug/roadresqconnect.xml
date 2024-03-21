@@ -6,7 +6,15 @@ roadresqconnect
 </name>
 </assembly>
 <members>
-<member name="F:roadresqconnect.CustomerPaymentPage.form1">
+<member name="F:roadresqconnect.PaymentSuccess.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.PaymentSuccess.form1">
 	<summary>
 form1 control.
 </summary>
@@ -14,41 +22,33 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:roadresqconnect.CustomerPaymentPage.LabelServiceName">
+</member><member name="F:roadresqconnect.PaymentSuccess.btnBackHomee">
 	<summary>
-LabelServiceName control.
+btnBackHomee control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:roadresqconnect.CustomerPaymentPage.LabelBaseCost">
+</member><member name="F:roadresqconnect.PaymentFrom.Head1">
 	<summary>
-LabelBaseCost control.
+Head1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:roadresqconnect.CustomerPaymentPage.LabelExtraCost">
+</member><member name="F:roadresqconnect.PaymentFrom.form1">
 	<summary>
-LabelExtraCost control.
+form1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:roadresqconnect.CustomerPaymentPage.LabelExtraCostDetails">
+</member><member name="F:roadresqconnect.PaymentFrom.Button1">
 	<summary>
-LabelExtraCostDetails control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerPaymentPage.ButtonPay">
-	<summary>
-ButtonPay control.
+Button1 control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -529,6 +529,54 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:roadresqconnect.CustomerComplaint.lblMessage">
 	<summary>
 lblMessage control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPaymentPage.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPaymentPage.LabelServiceName">
+	<summary>
+LabelServiceName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPaymentPage.LabelBaseCost">
+	<summary>
+LabelBaseCost control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPaymentPage.LabelExtraCost">
+	<summary>
+LabelExtraCost control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPaymentPage.LabelExtraCostDetails">
+	<summary>
+LabelExtraCostDetails control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPaymentPage.ButtonPay">
+	<summary>
+ButtonPay control.
 </summary>
 	<remarks>
 Auto-generated field.

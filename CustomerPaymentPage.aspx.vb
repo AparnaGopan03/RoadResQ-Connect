@@ -3,48 +3,59 @@
 Public Class CustomerPaymentPage
     Inherits System.Web.UI.Page
 
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
-        If Not IsPostBack AndAlso Request.QueryString("RequestId") IsNot Nothing Then
+        If Not IsPostBack Then
+            ' Retrieve the request ID from the query string
             Dim requestId As String = Request.QueryString("RequestId")
-            FetchAndDisplayPaymentDetails(requestId)
+
+            If Not String.IsNullOrEmpty(requestId) Then
+                Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
+                Dim query As String = "SELECT sd.servicename, sd.basecost, sd.extracost, sd.extracostdetails " & _
+                                      "FROM paymentdetail sd " & _
+                                      "INNER JOIN cservicerequest sr ON sd.requestid = sr.requestid " & _
+                                      "WHERE sr.requestid = @RequestId"
+
+                Using connection As New SqlConnection(connectionString)
+                    Using command As New SqlCommand(query, connection)
+                        command.Parameters.AddWithValue("@RequestId", requestId)
+
+                        Try
+                            connection.Open()
+                            Dim reader As SqlDataReader = command.ExecuteReader()
+
+                            If reader.HasRows Then
+                                reader.Read()
+
+                                ' Populate labels with payment details
+                                LabelServiceName.Text = reader("servicename").ToString()
+                                LabelBaseCost.Text = Convert.ToDecimal(reader("basecost")).ToString("C")
+                                LabelExtraCost.Text = Convert.ToDecimal(reader("extracost")).ToString("C")
+                                LabelExtraCostDetails.Text = reader("extracostdetails").ToString()
+
+                            Else
+                                ' No payment details found for the provided request ID
+                                ' Handle this scenario (e.g., display an error message)
+                            End If
+                        Catch ex As Exception
+                            ' Handle any exceptions (e.g., log or display error message)
+                        Finally
+                            connection.Close()
+                        End Try
+                    End Using
+                End Using
+            Else
+                ' Request ID is not available in the query string
+                ' Handle this scenario (e.g., display an error message or redirect)
+            End If
         End If
     End Sub
 
-    Private Sub FetchAndDisplayPaymentDetails(requestId As String)
-        ' Fetch payment details from the database based on the RequestId
-        Dim paymentDetails As DataTable = FetchPaymentDetails(requestId)
-
-        If paymentDetails.Rows.Count > 0 Then
-            LabelServiceName.Text = paymentDetails.Rows(0)("ServiceName").ToString()
-            LabelBaseCost.Text = paymentDetails.Rows(0)("BaseCost").ToString()
-            LabelExtraCost.Text = paymentDetails.Rows(0)("ExtraCost").ToString()
-            LabelExtraCostDetails.Text = paymentDetails.Rows(0)("ExtraCostDetails").ToString()
-        End If
-    End Sub
-
-    Private Function FetchPaymentDetails(requestId As String) As DataTable
-        Dim paymentDetails As New DataTable()
-
-        ' Use your connection string
-        Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
-        Dim query As String = "SELECT  servicename,basecost,extracost,extracostdetails FROM paymentdetail WHERE requestid = @RequestId"
-
-        Using connection As New SqlConnection(connectionString)
-            Using command As New SqlCommand(query, connection)
-                command.Parameters.AddWithValue("@RequestId", requestId)
-
-                Dim adapter As New SqlDataAdapter(command)
-                adapter.Fill(paymentDetails)
-            End Using
-        End Using
-
-        Return paymentDetails
-    End Function
 
 
-    Protected Sub ButtonPay_Click(sender As Object, e As EventArgs)
-        ' Handle the payment process here
-        ' This could involve redirecting to a payment gateway or performing any other payment-related action
+
+    Protected Sub ButtonPay_Click(sender As Object, e As EventArgs) Handles ButtonPay.Click
+        Response.Redirect("PaymentFrom.aspx")
     End Sub
 
 End Class

@@ -130,7 +130,10 @@
                 <a href="CustomerServiceRequest.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Request for a Service</a>
                 <a href="CustomerServiceSearch.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Search by Service Area</a>
                 <a href="CustomerHistory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Service Requests</a>
-                <a href="CustomerComplaint.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Complaint</a>
+                <a href="CustomerComplaint.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Register a Complaint</a>
+
+                <a href="CustomerPaymentHistory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Payment History</a>
+                <a href="CustomerComplaintHistory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Complaint History</a>
                 <a href="CustomerDeleteAccount.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Delete Account</a>
                 <a href="Logout.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Logout</a>
             </div>
@@ -175,9 +178,9 @@
                 </div>
 
                 <br />
-                <div class="profile-info">
+                <%--<div class="profile-info">
                     <asp:Button ID="btnUpdate" runat="server" Text="Update Profile" OnClientClick="return confirm('Are you sure you want to update your profile?');" OnClick="btnUpdate_Click" BackColor="Coral" ForeColor="Black" Height="50px" Width="150px" />
-                </div>
+                </div>--%>
             </div>
         </div>
 

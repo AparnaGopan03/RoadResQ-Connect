@@ -2,23 +2,23 @@
 
 Public Class CustomerPaymentPage
     Inherits System.Web.UI.Page
-
+    Dim co As roadresq = New roadresq
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
-            ' Retrieve the request ID from the query string
-            Dim requestId As String = Request.QueryString("RequestId")
+            ' Retrieve the customer ID from the session based on the username
+            Dim username As String = Session("Username").ToString()
+            Dim customerId As String = GetCustomerId()
 
-            If Not String.IsNullOrEmpty(requestId) Then
+            If Not String.IsNullOrEmpty(customerId) Then
                 Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
-                Dim query As String = "SELECT sd.servicename, sd.basecost, sd.extracost, sd.extracostdetails " & _
-                                      "FROM paymentdetail sd " & _
-                                      "INNER JOIN cservicerequest sr ON sd.requestid = sr.requestid " & _
-                                      "WHERE sr.requestid = @RequestId"
+                Dim query As String = "SELECT servicename, basecost, extracost, extracostdetails " &
+                                      "FROM paymentdetail " &
+                                      "WHERE customerid = @CustomerId"
 
                 Using connection As New SqlConnection(connectionString)
                     Using command As New SqlCommand(query, connection)
-                        command.Parameters.AddWithValue("@RequestId", requestId)
+                        command.Parameters.AddWithValue("@CustomerId", customerId)
 
                         Try
                             connection.Open()
@@ -34,7 +34,7 @@ Public Class CustomerPaymentPage
                                 LabelExtraCostDetails.Text = reader("extracostdetails").ToString()
 
                             Else
-                                ' No payment details found for the provided request ID
+                                ' No payment details found for the provided customer ID
                                 ' Handle this scenario (e.g., display an error message)
                             End If
                         Catch ex As Exception
@@ -45,12 +45,46 @@ Public Class CustomerPaymentPage
                     End Using
                 End Using
             Else
-                ' Request ID is not available in the query string
+                ' Customer ID is not available for the current user
                 ' Handle this scenario (e.g., display an error message or redirect)
             End If
         End If
     End Sub
 
+    Private Function GetCustomerId() As Integer
+        ' Check if the username is stored in session
+        If Session("Username") IsNot Nothing Then
+            ' Retrieve the username from session
+            Dim username As String = Session("Username").ToString()
+
+            ' Query the database to fetch the customer ID based on the username
+            Dim customerId As Integer = 0
+            Dim query As String = "SELECT customerid FROM Customer WHERE username = @username"
+
+
+            Using command As New SqlCommand(query, co.connect())
+                command.Parameters.AddWithValue("@username", username)
+
+                Try
+
+                    Dim result As Object = command.ExecuteScalar()
+                    If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
+                        customerId = Convert.ToInt32(result)
+                    End If
+                Catch ex As Exception
+                    ' Log any exceptions
+                    System.Diagnostics.Debug.WriteLine("Exception: " & ex.Message)
+                End Try
+            End Using
+
+
+            Return customerId
+        Else
+            ' Username is not stored in session, handle the case accordingly
+            ' For demonstration purposes, return 0
+            Return 0
+        End If
+    End Function
 
 
 

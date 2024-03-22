@@ -97,21 +97,36 @@
             <h2>Payment Details</h2>
             <div class="form-group">
                 <asp:Label ID="LabelService" runat="server" CssClass="form-label" Text="Select Service:"></asp:Label>
-                <asp:DropDownList ID="DropDownListService" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownListService_SelectedIndexChanged" AppendDataBoundItems="True" CssClass="form-control">
+                <asp:DropDownList ID="DropDownListService" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownListService_SelectedIndexChanged" AppendDataBoundItems="True" CssClass="form-control" onchange="calculateTotalCost()">
                 </asp:DropDownList>
             </div>
             <div class="form-group">
                 <asp:Label ID="LabelCost" runat="server" CssClass="form-label" Text="Cost:"></asp:Label>
-                <asp:TextBox ID="TextBoxCost" runat="server" ReadOnly="true" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="TextBoxCost" runat="server" ReadOnly="true" CssClass="form-control" oninput="calculateTotalCost()"></asp:TextBox>
             </div>
             <div class="form-group">
                 <asp:Label ID="LabelExtracost" runat="server" CssClass="form-label" Text="Extra Cost :"></asp:Label>
-                <asp:TextBox ID="TextBoxExtracost" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="TextBoxExtracost" runat="server" CssClass="form-control" oninput="calculateTotalCost()"></asp:TextBox>
             </div>
             <div class="form-group">
                 <asp:Label ID="Labelextradetails" runat="server" CssClass="form-label" Text="Extra Cost Details :"></asp:Label>
                 <asp:TextBox ID="TextBoxExtracostDetails" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
+            <div class="form-group">
+                <asp:Label ID="Labeltotalcost" runat="server" CssClass="form-label" Text="Total Cost :"></asp:Label>
+                <asp:TextBox ID="TextBoxtotalcost" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+
+            <script type="text/javascript">
+                function calculateTotalCost() {
+                    var cost = parseFloat(document.getElementById('<%= TextBoxCost.ClientID%>').value) || 0;
+                    var extracost = parseFloat(document.getElementById('<%= TextBoxExtracost.ClientID%>').value) || 0;
+                    var baseCost = parseFloat(document.getElementById('<%= DropDownListService.ClientID %>').value) || 0;
+                    var totalCost = baseCost + extracost ;
+        document.getElementById('<%= TextBoxtotalcost.ClientID %>').value = totalCost.toFixed(2);
+    }
+</script>
+
             <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" CssClass="btn-submit" />
             <br />
             <br />

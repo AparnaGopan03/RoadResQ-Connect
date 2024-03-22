@@ -93,13 +93,4 @@ Partial Public Class CustomerProfile
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblContactNumber As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''btnUpdate control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnUpdate As Global.System.Web.UI.WebControls.Button
 End Class

@@ -88,8 +88,10 @@
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
     <Content Include="CustomerComplaint.aspx" />
+    <Content Include="CustomerComplaintHistory.aspx" />
     <Content Include="CustomerDeleteAccount.aspx" />
     <Content Include="CustomerHistory.aspx" />
+    <Content Include="CustomerPaymentHistory.aspx" />
     <Content Include="CustomerPaymentPage.aspx" />
     <Content Include="CustomerProfile.aspx" />
     <Content Include="CustomerProfileUpdate.aspx" />
@@ -170,6 +172,13 @@
       <DependentUpon>CustomerComplaint.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="CustomerComplaintHistory.aspx.designer.vb">
+      <DependentUpon>CustomerComplaintHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerComplaintHistory.aspx.vb">
+      <DependentUpon>CustomerComplaintHistory.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="CustomerDeleteAccount.aspx.designer.vb">
       <DependentUpon>CustomerDeleteAccount.aspx</DependentUpon>
     </Compile>
@@ -182,6 +191,13 @@
     </Compile>
     <Compile Include="CustomerHistory.aspx.vb">
       <DependentUpon>CustomerHistory.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPaymentHistory.aspx.designer.vb">
+      <DependentUpon>CustomerPaymentHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPaymentHistory.aspx.vb">
+      <DependentUpon>CustomerPaymentHistory.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CustomerPaymentPage.aspx.designer.vb">

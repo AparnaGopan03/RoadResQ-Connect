@@ -104,6 +104,24 @@ Partial Public Class PaymentDetailsPage
     Protected WithEvents TextBoxExtracostDetails As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Labeltotalcost control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Labeltotalcost As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TextBoxtotalcost control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextBoxtotalcost As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''ButtonSubmit control.
     '''</summary>
     '''<remarks>

@@ -31,9 +31,6 @@ Public Class CustomerProfile
     End Sub
 
     
-    Protected Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        Response.Redirect("CustomerProfileUpdate.aspx")
-    End Sub
 End Class
     
 

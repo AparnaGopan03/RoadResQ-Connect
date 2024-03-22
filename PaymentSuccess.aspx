@@ -26,7 +26,7 @@
         }
         
         h1 {
-            color: #007bff;
+            color: coral;
             text-align: center;
         }
         
@@ -43,7 +43,7 @@
         }
         
         .button {
-            background-color: #007bff;
+            background-color: coral;
             color: #fff;
             border: none;
             padding: 10px 20px;

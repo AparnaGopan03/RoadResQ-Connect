@@ -5,7 +5,7 @@
 
     End Sub
 
-    Protected Sub btnBackHome_Click(sender As Object, e As EventArgs)
+    Protected Sub btnBackHome_Click(sender As Object, e As EventArgs) Handles btnBackHomee.Click
         Response.Redirect("CustomerProfile.aspx")
     End Sub
 End Class

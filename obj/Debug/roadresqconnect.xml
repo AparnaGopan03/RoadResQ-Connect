@@ -6,55 +6,7 @@ roadresqconnect
 </name>
 </assembly>
 <members>
-<member name="F:roadresqconnect.CustomerComplaintHistory.Head1">
-	<summary>
-Head1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerComplaintHistory.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerComplaintHistory.GridViewComplaints">
-	<summary>
-GridViewComplaints control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerPaymentHistory.Head1">
-	<summary>
-Head1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerPaymentHistory.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerPaymentHistory.GridViewPayments">
-	<summary>
-GridViewPayments control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.AdminDashboard.form1">
+<member name="F:roadresqconnect.AdminDashboard.form1">
 	<summary>
 form1 control.
 </summary>
@@ -1126,14 +1078,6 @@ lblarea control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:roadresqconnect.ProviderProfile.btnUpdate">
-	<summary>
-btnUpdate control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
 </member><member name="F:roadresqconnect.ProviderProfile.btnSaveLocation">
 	<summary>
 btnSaveLocation control.
@@ -1217,6 +1161,30 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:roadresqconnect.CustomerDeleteAccount.btnSubmit">
 	<summary>
 btnSubmit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPaymentHistory.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPaymentHistory.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPaymentHistory.GridViewPayments">
+	<summary>
+GridViewPayments control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1578,6 +1546,30 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:roadresqconnect.PaymentFrom.Button1">
 	<summary>
 Button1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerComplaintHistory.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerComplaintHistory.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerComplaintHistory.GridViewComplaints">
+	<summary>
+GridViewComplaints control.
 </summary>
 	<remarks>
 Auto-generated field.

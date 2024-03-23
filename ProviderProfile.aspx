@@ -6,10 +6,11 @@
     <title>Profile</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f8f9fa;
+            color: #333;
         }
 
         .container {
@@ -18,10 +19,13 @@
         }
 
         .sidebar {
-            background-color: #333;
+            background: linear-gradient(to right, #ff7f50, #ffcc5c);
             width: 250px;
             padding-top: 20px;
-            transition: width 0.3s ease; 
+            transition: width 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
         }
 
         .sidebar.active {
@@ -29,16 +33,17 @@
         }
 
         .sidebar a {
-            padding: 10px 15px;
+            padding: 15px;
             text-decoration: none;
             font-size: 18px;
-            color: #f1f1f1;
+            color: #fff;
             display: block;
             transition: background-color 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .sidebar a:hover {
-            background-color: #555;
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .hamburger {
@@ -46,16 +51,18 @@
             top: 20px;
             left: 20px;
             cursor: pointer;
-            z-index: 999; 
-            color: #ff7f50; 
+            z-index: 999;
+            color: #fff;
             padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         .hamburger span {
             display: block;
             width: 30px;
             height: 5px;
-            background: #ff7f50;
+            background: #fff;
             margin: 5px 0;
             transition: 0.4s;
         }
@@ -79,25 +86,28 @@
         }
 
         .content h2 {
-            color: #333;
+            color: #ff7f50;
+            font-size: 28px;
+            margin-bottom: 20px;
         }
 
         .content img {
             width: 150px;
-            height: auto;
+            height: 150px;
+            border-radius: 50%;
             margin: 20px auto;
             display: block;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .profile-info {
             margin-bottom: 15px;
             text-align: left;
-        
         }
 
         .profile-info label {
             display: inline-block;
-            width: 200px;
+            width: 150px;
             font-weight: bold;
             color: #555;
             margin-bottom: 5px;
@@ -105,6 +115,7 @@
 
         .profile-info span {
             display: inline-block;
+            color: #777;
         }
 
         @media (max-width: 768px) {
@@ -117,20 +128,20 @@
             }
         }
 
+        .custom-button {
+        background-color: #ff7f50; /* Coral color */
+        color: #fff; /* White text color */
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
 
-        button {
-    /* Add your button styling here */
-    padding: 10px 20px;
-    background-color: black;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: black;
-}
+    .custom-button:hover {
+        background-color: #ffcc5c; /* Lighter shade on hover */
+    }
 
     </style>
 
@@ -252,10 +263,9 @@ button:hover {
                 </div>
                 <br />
                 <div class="profile-info">
-                    <asp:Button ID="btnUpdate" runat="server" Text="Update Profile" OnClientClick="return confirm('Are you sure you want to update your profile?');" OnClick="btnUpdate_Click" BackColor="Coral" ForeColor="Black" Height="50px" Width="150px" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                    <%-- <asp:Button ID="btnUpdate1" runat="server" Text="Save Location" OnClick="btnUpdate1_Click"  />--%>
-                    <asp:Button ID="btnSaveLocation" runat="server" Text="Save Location" OnClientClick="getLocationAndSave(); return false; " BackColor="Coral" ForeColor="Black" Height="50px" Width="150px" />
+                    <asp:Button ID="btnSaveLocation" runat="server" Text="Save Location" OnClientClick="getLocationAndSave(); return false;" CssClass="custom-button" />
 
                 </div>
             </div>

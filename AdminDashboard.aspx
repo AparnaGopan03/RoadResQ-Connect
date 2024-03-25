@@ -592,7 +592,7 @@ border-radius: 4px;
 						<h3> Dashboard</h3> 
 					</div> 
 
-                    <a href="your_page_url_here.aspx">
+                    <a href="AdminComplaints.aspx">
 					<div class="option2 nav-option"> 
 						<img src= 
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
@@ -602,6 +602,7 @@ border-radius: 4px;
 					</div> 
                     </a>
 
+                    <a href="Adminviewsr.aspx">
 					<div class="nav-option option3"> 
 						<img src= 
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png"
@@ -609,7 +610,9 @@ border-radius: 4px;
 							alt="report"> 
 						<h3> Service Requests</h3> 
 					</div> 
+                        </a>
 
+                        <a href="Adminviewsp.aspx">
 					<div class="nav-option option4"> 
 						<img src= 
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
@@ -617,7 +620,9 @@ border-radius: 4px;
 							alt="institution"> 
 						<h3> Service Providers</h3> 
 					</div> 
+                            </a>
 
+                            <a href="Adminviewcust.aspx">
 					<div class="nav-option option5"> 
 						<img src= 
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
@@ -625,6 +630,7 @@ border-radius: 4px;
 							alt="blog"> 
 						<h3> Customers</h3> 
 					</div> 
+                                </a>
 
 					<div class="nav-option option6"> 
 						<img src= 

@@ -81,8 +81,12 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminComplaints.aspx" />
     <Content Include="AdminDashboard.aspx" />
     <Content Include="AdminSignIn.aspx" />
+    <Content Include="Adminviewcust.aspx" />
+    <Content Include="Adminviewsp.aspx" />
+    <Content Include="Adminviewsr.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\responsive.css" />
@@ -151,6 +155,13 @@
     <Content Include="Home.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminComplaints.aspx.designer.vb">
+      <DependentUpon>AdminComplaints.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminComplaints.aspx.vb">
+      <DependentUpon>AdminComplaints.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="AdminDashboard.aspx.designer.vb">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
     </Compile>
@@ -163,6 +174,27 @@
     </Compile>
     <Compile Include="AdminSignIn.aspx.vb">
       <DependentUpon>AdminSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Adminviewcust.aspx.designer.vb">
+      <DependentUpon>Adminviewcust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adminviewcust.aspx.vb">
+      <DependentUpon>Adminviewcust.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Adminviewsp.aspx.designer.vb">
+      <DependentUpon>Adminviewsp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adminviewsp.aspx.vb">
+      <DependentUpon>Adminviewsp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Adminviewsr.aspx.designer.vb">
+      <DependentUpon>Adminviewsr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adminviewsr.aspx.vb">
+      <DependentUpon>Adminviewsr.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CustomerComplaint.aspx.designer.vb">

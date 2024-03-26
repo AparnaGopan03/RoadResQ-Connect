@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>Customer Login</title>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -87,10 +88,32 @@
                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Password"></asp:TextBox>
                 <br />
                 <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
-
+                <br />
+                <asp:LinkButton ID="LinkButton1" runat="server" OnClientClick="showSweetAlert(); return false;">Forget Password/Username?</asp:LinkButton>
             </div>
             <div class="customer-container"></div>
         </div>
     </form>
+
+     <script>
+         function showSweetAlert() {
+             // Show a SweetAlert confirmation dialog
+             Swal.fire({
+                 title: 'Password Recovery',
+                 text: 'Do you want to change your password or username?',
+                 showDenyButton: true,
+                 confirmButtonText: 'Change Password',
+                 denyButtonText: 'Change Username',
+             }).then((result) => {
+                 if (result.isConfirmed) {
+                     // If user clicks "Change Password", redirect to the password change page
+                     window.location.href = 'CustomerPassword.aspx';
+         } else if (result.isDenied) {
+             // If user clicks "Change Username", redirect to the username change page
+             window.location.href = 'CustomerUsername.aspx';
+         }
+         });
+         }
+    </script>
 </body>
 </html>

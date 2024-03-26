@@ -95,6 +95,7 @@
     <Content Include="CustomerComplaintHistory.aspx" />
     <Content Include="CustomerDeleteAccount.aspx" />
     <Content Include="CustomerHistory.aspx" />
+    <Content Include="CustomerPassword.aspx" />
     <Content Include="CustomerPaymentHistory.aspx" />
     <Content Include="CustomerPaymentPage.aspx" />
     <Content Include="CustomerProfile.aspx" />
@@ -103,6 +104,7 @@
     <Content Include="CustomerServiceSearch.aspx" />
     <Content Include="CustomerSignIn.aspx" />
     <Content Include="CustomerSignUp.aspx" />
+    <Content Include="CustomerUsername.aspx" />
     <Content Include="images\about-carimg.jpg" />
     <Content Include="images\about-img.jpg" />
     <Content Include="images\client-bg.jpg" />
@@ -135,10 +137,12 @@
     <Content Include="PaymentSuccess.aspx" />
     <Content Include="ProviderDeleteAccount.aspx" />
     <Content Include="ProviderLocationAccessConfirmation.aspx" />
+    <Content Include="ProviderPassword.aspx" />
     <Content Include="ProviderProfile.aspx" />
     <Content Include="ProviderProfileUpdate.aspx" />
     <Content Include="ProviderSaveLocation.aspx" />
     <Content Include="ProviderServiceRequest.aspx" />
+    <Content Include="ProviderUsername.aspx" />
     <Content Include="Service.aspx" />
     <Content Include="Services.aspx" />
     <Content Include="ProviderSetAvailability.aspx" />
@@ -225,6 +229,13 @@
       <DependentUpon>CustomerHistory.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="CustomerPassword.aspx.designer.vb">
+      <DependentUpon>CustomerPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPassword.aspx.vb">
+      <DependentUpon>CustomerPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="CustomerPaymentHistory.aspx.designer.vb">
       <DependentUpon>CustomerPaymentHistory.aspx</DependentUpon>
     </Compile>
@@ -280,6 +291,13 @@
     <Compile Include="CustomerSignUp.aspx.vb">
       <DependentUpon>CustomerSignUp.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CustomerUsername.aspx.designer.vb">
+      <DependentUpon>CustomerUsername.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerUsername.aspx.vb">
+      <DependentUpon>CustomerUsername.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LogOut.aspx.designer.vb">
       <DependentUpon>LogOut.aspx</DependentUpon>
@@ -364,6 +382,13 @@
       <DependentUpon>ProviderLocationAccessConfirmation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="ProviderPassword.aspx.designer.vb">
+      <DependentUpon>ProviderPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderPassword.aspx.vb">
+      <DependentUpon>ProviderPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="ProviderProfile.aspx.designer.vb">
       <DependentUpon>ProviderProfile.aspx</DependentUpon>
     </Compile>
@@ -391,6 +416,13 @@
     <Compile Include="ProviderServiceRequest.aspx.vb">
       <DependentUpon>ProviderServiceRequest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProviderUsername.aspx.designer.vb">
+      <DependentUpon>ProviderUsername.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProviderUsername.aspx.vb">
+      <DependentUpon>ProviderUsername.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Service.aspx.designer.vb">
       <DependentUpon>Service.aspx</DependentUpon>

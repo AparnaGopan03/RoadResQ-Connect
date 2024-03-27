@@ -122,6 +122,44 @@
 }
     </style>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+    function showEmailAlert(message) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Email Address',
+            text: message,
+            showConfirmButton: false,
+            timer: 2000
+        });
+    }
+</script>
+
+    <script>
+        function showContactAlert(message) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Contact Number',
+                text: message,
+                showConfirmButton: false,
+                timer: 2000
+            });
+        }
+</script>
+
+    <script>
+        function showUserAlert(message) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Username Already Exists',
+                text: message,
+                showConfirmButton: false,
+                timer: 2000
+            });
+        }
+</script>
+
+
 </head>
 <body>
     <form id="form1" runat="server">

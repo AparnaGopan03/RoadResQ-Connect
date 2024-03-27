@@ -24,22 +24,25 @@ Public Class ProviderSignUp
         ' Validate email using a regular expression
         If Not IsValidEmail(email) Then
             ' Display an error message or take appropriate action
-            Response.Write("<script>alert('Invalid email address. Please enter a valid email.');</script>")
+            ClientScript.RegisterStartupScript(Me.GetType(), "InvalidEmailAlert", "showEmailAlert('Please enter a valid email address.');", True)
             Return
         End If
+
 
         ' Validate contact number using a regular expression
         If Not IsValidContactNumber(contactNo) Then
             ' Display an error message or take appropriate action
-            Response.Write("<script>alert('Invalid contact number. Please enter a valid contact number.');</script>")
+            ClientScript.RegisterStartupScript(Me.GetType(), "InvalidContactNoAlert", "showContactAlert('Please enter a valid contact number.');", True)
             Return
         End If
 
+
         If UsernameExists(username) Then
-            ' Display an error message
-            Response.Write("<script>alert('Username already exists. Please choose a different username.');</script>")
+            ' Display an error message or take appropriate action
+            ClientScript.RegisterStartupScript(Me.GetType(), "UsernameExistsAlert", "showUserAlert('Username already exists. Please choose a different username.');", True)
             Return
         End If
+
 
         ' Insert mechanic data into database
         Dim connectionString As String = "YourConnectionString"

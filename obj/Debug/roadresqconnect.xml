@@ -6,199 +6,7 @@ roadresqconnect
 </name>
 </assembly>
 <members>
-<member name="F:roadresqconnect.ProviderUsername.Head1">
-	<summary>
-Head1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.ProviderUsername.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.ProviderUsername.txtEmail">
-	<summary>
-txtEmail control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.ProviderUsername.txtNewUsername">
-	<summary>
-txtNewUsername control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.ProviderUsername.txtConfirmUsername">
-	<summary>
-txtConfirmUsername control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.ProviderUsername.btnSubmit">
-	<summary>
-btnSubmit control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.ProviderPassword.Head1">
-	<summary>
-Head1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.ProviderPassword.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.ProviderPassword.txtEmail">
-	<summary>
-txtEmail control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.ProviderPassword.txtNewPassword">
-	<summary>
-txtNewPassword control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.ProviderPassword.txtConfirmPassword">
-	<summary>
-txtConfirmPassword control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.ProviderPassword.btnSubmit">
-	<summary>
-btnSubmit control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerUsername.Head1">
-	<summary>
-Head1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerUsername.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerUsername.txtEmail">
-	<summary>
-txtEmail control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerUsername.txtNewUsername">
-	<summary>
-txtNewUsername control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerUsername.txtConfirmUsername">
-	<summary>
-txtConfirmUsername control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerUsername.btnSubmit">
-	<summary>
-btnSubmit control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerPassword.Head1">
-	<summary>
-Head1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerPassword.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerPassword.txtEmail">
-	<summary>
-txtEmail control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerPassword.txtNewPassword">
-	<summary>
-txtNewPassword control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerPassword.txtConfirmPassword">
-	<summary>
-txtConfirmPassword control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.CustomerPassword.btnSubmit">
-	<summary>
-btnSubmit control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:roadresqconnect.AdminDashboard.Head1">
+<member name="F:roadresqconnect.AdminDashboard.Head1">
 	<summary>
 Head1 control.
 </summary>
@@ -510,9 +318,89 @@ btnLogin control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:roadresqconnect.Adminviewsp.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:roadresqconnect.Adminviewsp.form1">
 	<summary>
 form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.Adminviewsp.txtCustomerID">
+	<summary>
+txtCustomerID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.Adminviewsp.btnFilter">
+	<summary>
+btnFilter control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.Adminviewsp.GridView1">
+	<summary>
+GridView1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPassword.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPassword.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPassword.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPassword.txtNewPassword">
+	<summary>
+txtNewPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPassword.txtConfirmPassword">
+	<summary>
+txtConfirmPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerPassword.btnSubmit">
+	<summary>
+btnSubmit control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1086,6 +974,54 @@ ProviderButton control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:roadresqconnect.ProviderPassword.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.ProviderPassword.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.ProviderPassword.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.ProviderPassword.txtNewPassword">
+	<summary>
+txtNewPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.ProviderPassword.txtConfirmPassword">
+	<summary>
+txtConfirmPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.ProviderPassword.btnSubmit">
+	<summary>
+btnSubmit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:roadresqconnect.Main.head">
 	<summary>
 head control.
@@ -1238,9 +1174,41 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:roadresqconnect.Adminviewcust.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:roadresqconnect.Adminviewcust.form1">
 	<summary>
 form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.Adminviewcust.txtCustomerID">
+	<summary>
+txtCustomerID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.Adminviewcust.btnFilter">
+	<summary>
+btnFilter control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.Adminviewcust.GridView1">
+	<summary>
+GridView1 control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1489,6 +1457,54 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:roadresqconnect.Adminviewsr.form1">
 	<summary>
 form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerUsername.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerUsername.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerUsername.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerUsername.txtNewUsername">
+	<summary>
+txtNewUsername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerUsername.txtConfirmUsername">
+	<summary>
+txtConfirmUsername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.CustomerUsername.btnSubmit">
+	<summary>
+btnSubmit control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1874,6 +1890,54 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:roadresqconnect.PaymentSuccess.btnBackHomee">
 	<summary>
 btnBackHomee control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.ProviderUsername.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.ProviderUsername.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.ProviderUsername.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.ProviderUsername.txtNewUsername">
+	<summary>
+txtNewUsername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.ProviderUsername.txtConfirmUsername">
+	<summary>
+txtConfirmUsername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:roadresqconnect.ProviderUsername.btnSubmit">
+	<summary>
+btnSubmit control.
 </summary>
 	<remarks>
 Auto-generated field.

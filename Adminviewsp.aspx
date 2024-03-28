@@ -110,6 +110,9 @@
                 <asp:TextBox ID="txtCustomerID" runat="server"></asp:TextBox>
                 <asp:Button ID="btnFilter" runat="server" Text="Filter" OnClick="btnFilter_Click" BackColor="Coral" />
             </div>
+            <br />
+            <asp:Button ID="Button3" runat="server" Text="Back to Dashboard"  BackColor="Coral" />
+      
         </div>
 
         <div class="gridview-container">

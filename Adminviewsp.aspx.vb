@@ -91,4 +91,7 @@ Public Class Adminviewsp
         Return totalRequests.ToString()
     End Function
 
+    Protected Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Response.Redirect("AdminDashboard.aspx")
+    End Sub
 End Class

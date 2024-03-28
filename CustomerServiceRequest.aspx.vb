@@ -209,8 +209,7 @@ Public Class CustomerServiceRequest
 
 
     Private Sub SendServiceRequest(mechanic As Mechanic)
-        ' Implement this method to send a service request to the nearest mechanic
-        ' Example: SendServiceRequestToMechanic(mechanic)
+        
     End Sub
 
     Private Function CalculateDistance(latitude1 As Double, longitude1 As Double, latitude2 As Double, longitude2 As Double) As Double

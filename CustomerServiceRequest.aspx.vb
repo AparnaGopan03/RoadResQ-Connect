@@ -1,6 +1,10 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Linq
 
+
+Imports System.Net
+Imports System.Net.Mail
+
 Public Class CustomerServiceRequest
     Inherits System.Web.UI.Page
     Dim co As roadresq = New roadresq
@@ -208,9 +212,7 @@ Public Class CustomerServiceRequest
     End Sub
 
 
-    Private Sub SendServiceRequest(mechanic As Mechanic)
-        
-    End Sub
+   
 
     Private Function CalculateDistance(latitude1 As Double, longitude1 As Double, latitude2 As Double, longitude2 As Double) As Double
         Dim earthRadius As Double = 6371 ' Earth radius in kilometers
@@ -230,4 +232,59 @@ Public Class CustomerServiceRequest
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Response.Redirect("CustomerProfile.aspx")
     End Sub
+
+    Private Sub SendServiceRequest(mechanic As Mechanic)
+        Try
+            Dim mechanicEmail As String = GetMechanicEmail(mechanic.ProviderId)
+            If Not String.IsNullOrEmpty(mechanicEmail) Then
+                Dim fromAddress As New MailAddress("aparna.inmca1924@saintgits.org", "RoadResQ Connect")
+                Dim toAddress As New MailAddress(mechanicEmail)
+                Dim subject As String = "New Service Request"
+                Dim body As String = "Dear Service Provider,<br /><br />You have a new service request. Please check your dashboard for more details.<br /><br />Thank you."
+
+                Dim smtpClient As New SmtpClient()
+                smtpClient.Host = "smtp.gmail.com" 'Specify your SMTP server address
+                smtpClient.Port = 587 'Specify the port number
+                smtpClient.EnableSsl = True 'Enable SSL
+                smtpClient.Credentials = New NetworkCredential("aparna.inmca1924@saintgits.org", "aparna@anjana") 'Specify your email credentials
+
+                Dim mailMessage As New MailMessage(fromAddress, toAddress)
+                mailMessage.Subject = subject
+                mailMessage.Body = body
+                mailMessage.IsBodyHtml = True ' Indicate that the body is HTML
+
+                smtpClient.Send(mailMessage)
+                ' Optionally, you can handle success or provide feedback to the user.
+                ' Response.Write("Email Sent Successfully!")
+            Else
+                ' Mechanic email not found
+                ' Handle this scenario as per your application's logic
+            End If
+        Catch ex As Exception
+            ' Handle exception
+            ' Response.Write("Email Sending Failed: " & ex.Message)
+        End Try
+    End Sub
+
+
+    Private Function GetMechanicEmail(providerId As Integer) As String
+        Dim email As String = ""
+        Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123"
+
+        Dim query As String = "SELECT Email FROM serviceprovider WHERE ProviderId = @ProviderId"
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@ProviderId", providerId)
+                connection.Open()
+                Dim result As Object = command.ExecuteScalar()
+                If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
+                    email = Convert.ToString(result)
+                End If
+            End Using
+        End Using
+
+        Return email
+    End Function
+
 End Class

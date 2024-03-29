@@ -87,6 +87,7 @@
     <Content Include="Adminviewcust.aspx" />
     <Content Include="Adminviewsp.aspx" />
     <Content Include="Adminviewsr.aspx" />
+    <Content Include="CheckForUpdates.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\responsive.css" />
@@ -200,6 +201,12 @@
     <Compile Include="Adminviewsr.aspx.vb">
       <DependentUpon>Adminviewsr.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="CheckForUpdates.aspx.designer.vb">
+      <DependentUpon>CheckForUpdates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckForUpdates.aspx.vb">
+      <DependentUpon>CheckForUpdates.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerComplaint.aspx.designer.vb">
       <DependentUpon>CustomerComplaint.aspx</DependentUpon>

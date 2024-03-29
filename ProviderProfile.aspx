@@ -3,6 +3,40 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
+
+   <%-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css" />
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include SweetAlert JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        $(document).ready(function () {
+            function pollForUpdates() {
+                $.ajax({
+                    url: 'CheckForUpdates.aspx', // URL to server-side handler : Polling mechanism
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.updatedProviderId) {
+                            // Display SweetAlert notification on profile page
+                            Swal.fire({
+                                title: 'Dear Provider',
+                                text: 'Please go to the page',
+                                icon: 'info',
+                                confirmButtonText: 'OK'
+                            });
+                        }
+                    },
+                    complete: function () {
+                        setTimeout(pollForUpdates, 30000); // Poll every 30 seconds
+                    }
+                });
+            }
+
+            pollForUpdates(); // Start polling when profile page loads
+        });
+    </script>--%>
+
     <title>Profile</title>
     <style>
         body {

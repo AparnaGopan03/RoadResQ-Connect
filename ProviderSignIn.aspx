@@ -6,6 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>Provider Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
@@ -98,7 +99,7 @@
         function showSweetAlert() {
             // Show a SweetAlert confirmation dialog
             Swal.fire({
-                title: 'Password Recovery',
+                title: 'Credentials Recovery',
                 text: 'Do you want to change your password or username?',
                 showDenyButton: true,
                 confirmButtonText: 'Change Password',
@@ -114,5 +115,7 @@
         });
         }
     </script>
+
+    
 </body>
 </html>

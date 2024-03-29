@@ -11,8 +11,8 @@
             ' Check if latitude and longitude are not empty
             If Not String.IsNullOrEmpty(latitude) AndAlso Not String.IsNullOrEmpty(longitude) Then
                 ' Call JavaScript function to initialize map with formatted latitude and longitude values
-                Dim script As String = "initializeMap('" & latitude & "', '" & longitude & "');"
-                ClientScript.RegisterStartupScript(Me.GetType(), "InitializeMap", script, True)
+                Dim script As String = "initMap('" & latitude & "', '" & longitude & "');"
+                ClientScript.RegisterStartupScript(Me.GetType(), "initMap", script, True)
             Else
                 ' Handle case where latitude or longitude is missing
                 ' For example, you could display an error message or redirect to a different page

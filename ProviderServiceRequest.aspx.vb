@@ -117,13 +117,13 @@ Public Class ProviderServiceRequest
             ' Assume conn is your database connection object
             Using conn As New SqlConnection(connectionString)
                 conn.Open()
-                Dim query As String = "SELECT Latitude, Longitude FROM CServiceRequest WHERE RequestID = @RequestId"
+                Dim query As String = "SELECT latitude, longitude FROM CServiceRequest WHERE RequestID = @RequestId"
                 Using cmd As New SqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@RequestId", requestId)
                     Dim reader As SqlDataReader = cmd.ExecuteReader()
                     If reader.Read() Then
-                        latitude = reader("Latitude").ToString()
-                        longitude = reader("Longitude").ToString()
+                        latitude = reader("latitude").ToString()
+                        longitude = reader("longitude").ToString()
                     End If
                 End Using
             End Using
@@ -214,4 +214,7 @@ Public Class ProviderServiceRequest
     End Sub
 
    
+    Protected Sub GridViewRequests_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridViewRequests.SelectedIndexChanged
+
+    End Sub
 End Class

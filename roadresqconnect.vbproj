@@ -81,6 +81,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Adminaddservices.aspx" />
     <Content Include="AdminComplaints.aspx" />
     <Content Include="AdminDashboard.aspx" />
     <Content Include="AdminSignIn.aspx" />
@@ -160,6 +161,13 @@
     <Content Include="Home.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adminaddservices.aspx.designer.vb">
+      <DependentUpon>Adminaddservices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adminaddservices.aspx.vb">
+      <DependentUpon>Adminaddservices.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="AdminComplaints.aspx.designer.vb">
       <DependentUpon>AdminComplaints.aspx</DependentUpon>
     </Compile>

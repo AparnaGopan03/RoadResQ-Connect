@@ -5,6 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <meta charset="UTF-8"> 
 	<meta http-equiv="X-UA-Compatible"
 		content="IE=edge"> 
@@ -536,6 +539,16 @@ border-radius: 4px;
         color : darkblue;
     }
 
+  .container1 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .graph1 {
+        flex: 1;
+        margin-right: 10px; /* Adjust spacing between graphs */
+    }
+
     </style>
 </head>
 <body>
@@ -629,6 +642,16 @@ border-radius: 4px;
 							class="nav-img"
 							alt="blog"> 
 						<h3> Customers</h3> 
+					</div> 
+                                </a>
+
+                     <a href="Adminaddservices.aspx">
+					<div class="nav-option option5"> 
+						<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
+							class="nav-img"
+							alt="blog"> 
+						<h3> Add Services</h3> 
 					</div> 
                                 </a>
 
@@ -788,11 +811,104 @@ border-radius: 4px;
 					</div> 
 				</div> 
 			</div> --%>
+            <br />
+            <br />
+
+             <div class="container1">
+             <div class="graph1">
+            <!-- Canvas element for Chart.js -->
+            <canvas id="serviceRequestsChart" width="400" height="400"></canvas>
+                 </div>
+             <div class="graph1">
+
+            <canvas id="totalRevenueChart" width="400" height="400"></canvas>
+</div>
+        </div>
+
 		</div> 
 	</div> 
 
 
     </form>
+
+        
+ <script type="text/javascript">
+     // Retrieve the data registered by code-behind
+     var data = serviceRequestData;
+
+     // Get the canvas element
+     var ctx = document.getElementById('serviceRequestsChart').getContext('2d');
+
+     // Create the chart
+     var chart = new Chart(ctx, {
+         type: 'doughnut', // Change to doughnut chart
+         data: {
+             labels: Object.keys(data), // Months
+             datasets: [{
+                 label: 'Service Requests',
+                 data: Object.values(data), // Request counts
+                 backgroundColor: [
+                     'rgba(255, 99, 132, 0.2)',
+                     'rgba(54, 162, 235, 0.2)'
+                     // Add more colors as needed
+                 ],
+                 borderColor: [
+                     'rgba(255, 99, 132, 1)',
+                     'rgba(54, 162, 235, 1)'
+                     // Add more colors as needed
+                 ],
+                 borderWidth: 1
+             }]
+         },
+         options: {
+             responsive: true,
+             maintainAspectRatio: false // To make the chart bigger
+         }
+     });
+</script>
+
+   <script type="text/javascript">
+       // Retrieve the data registered by code-behind
+       var data = totalRevenueData;
+
+       // Get the canvas element
+       var ctx = document.getElementById('totalRevenueChart').getContext('2d');
+
+       // Create the chart
+       var chart = new Chart(ctx, {
+           type: 'doughnut', // Doughnut chart type
+           data: {
+               labels: Object.keys(data), // Categories (e.g., product names, sales channels)
+               datasets: [{
+                   label: 'Total Revenue',
+                   data: Object.values(data), // Revenue values
+                   backgroundColor: [
+                       'rgba(255, 99, 132, 0.2)',
+                       'rgba(54, 162, 235, 0.2)',
+                       'rgba(255, 206, 86, 0.2)',
+                       'rgba(75, 192, 192, 0.2)',
+                       'rgba(153, 102, 255, 0.2)'
+                       // Add more colors as needed
+                   ],
+                   borderColor: [
+                       'rgba(255, 99, 132, 1)',
+                       'rgba(54, 162, 235, 1)',
+                       'rgba(255, 206, 86, 1)',
+                       'rgba(75, 192, 192, 1)',
+                       'rgba(153, 102, 255, 1)'
+                       // Add more colors as needed
+                   ],
+                   borderWidth: 1
+               }]
+           },
+           options: {
+               responsive: true,
+               maintainAspectRatio: false // To make the chart bigger
+           }
+       });
+</script>
+
+
 </body>
 </html>
 

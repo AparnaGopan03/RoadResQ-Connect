@@ -244,7 +244,7 @@
                 
                 <a href="ProviderSetAvailability.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Set Availability</a>
                 <a href="ProviderServiceRequest.aspx">&nbsp;&nbsp;&nbsp;&nbsp;View Requests</a>
-                <%--<a href="ProviderHistory.aspx">&nbsp;&nbsp;&nbsp;&nbsp;History</a>--%>
+                <a href="ChatInterface.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Chat</a>
                 <a href="ProviderDeleteAccount.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Delete Account</a>
                 <a href="Logout.aspx">&nbsp;&nbsp;&nbsp;&nbsp;Logout</a>
             </div>

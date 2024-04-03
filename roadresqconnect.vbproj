@@ -88,11 +88,13 @@
     <Content Include="Adminviewcust.aspx" />
     <Content Include="Adminviewsp.aspx" />
     <Content Include="Adminviewsr.aspx" />
+    <Content Include="ChatInterface.aspx" />
     <Content Include="CheckForUpdates.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
+    <Content Include="CustomerChatInterface.aspx" />
     <Content Include="CustomerComplaint.aspx" />
     <Content Include="CustomerComplaintHistory.aspx" />
     <Content Include="CustomerDeleteAccount.aspx" />
@@ -210,11 +212,25 @@
       <DependentUpon>Adminviewsr.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="ChatInterface.aspx.designer.vb">
+      <DependentUpon>ChatInterface.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChatInterface.aspx.vb">
+      <DependentUpon>ChatInterface.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="CheckForUpdates.aspx.designer.vb">
       <DependentUpon>CheckForUpdates.aspx</DependentUpon>
     </Compile>
     <Compile Include="CheckForUpdates.aspx.vb">
       <DependentUpon>CheckForUpdates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerChatInterface.aspx.designer.vb">
+      <DependentUpon>CustomerChatInterface.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerChatInterface.aspx.vb">
+      <DependentUpon>CustomerChatInterface.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="CustomerComplaint.aspx.designer.vb">
       <DependentUpon>CustomerComplaint.aspx</DependentUpon>

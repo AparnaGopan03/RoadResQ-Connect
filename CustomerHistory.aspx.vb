@@ -100,6 +100,18 @@ Public Class CustomerHistory
             ' Redirect to the PaymentDetailsPage with the RequestId as a query parameter
             Response.Redirect("CustomerPaymentPage.aspx?RequestId=" & requestId)
         End If
+
+        If e.CommandName = "Chat" Then
+            ' Get the row index of the clicked row
+            Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+
+            ' Retrieve necessary data from the GridView row
+            'Dim requestId As String = GridViewHistory.DataKeys(index).Values("RequestId").ToString()
+            Dim providerId As String = GridViewHistory.Rows(index).Cells(9).Text ' Assuming Provider ID is in the 10th column
+
+            ' Redirect to the chat interface page with necessary parameters
+            Response.Redirect("CustomerChatInterface.aspx?providerId=" & providerId)
+        End If
     End Sub
 
 

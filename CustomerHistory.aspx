@@ -66,6 +66,11 @@
                 <asp:Button ID="btnViewPayment" runat="server" Text=" Payment " CommandName="ViewPaymentDetails" CommandArgument='<%# Container.DataItemIndex %>' />
             </ItemTemplate>
         </asp:TemplateField>
+        <asp:TemplateField HeaderText="Communicate">
+            <ItemTemplate>
+        <asp:Button ID="btnChat" runat="server" Text="Chat" CommandName="Chat" CommandArgument='<%# Container.DataItemIndex %>' />
+         </ItemTemplate>
+        </asp:TemplateField> 
     </Columns>
 </asp:GridView>
 

@@ -10,7 +10,7 @@ Public Class CustomerChatInterface
         End If
     End Sub
 
-    Protected Sub btnSend_Click(sender As Object, e As EventArgs)
+    Protected Sub btnSend_Click(sender As Object, e As EventArgs) Handles btnSend.Click
         ' Get the logged-in customer's username from the session
         Dim username As String = Session("Username")
 
@@ -99,7 +99,6 @@ Public Class CustomerChatInterface
         Return customerId
     End Function
 
-
     Private Function GetChatHistory(customerId As Integer, providerId As Integer) As String
         ' Initialize the chat history string builder
         Dim chatHistory As New StringBuilder()
@@ -107,8 +106,10 @@ Public Class CustomerChatInterface
         ' Your connection string to the SQL Server database
         Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
 
-        ' SQL query to select messages between the customer and provider
-        Dim query As String = "SELECT CustomerID, ProviderID, MessageText FROM Messages WHERE (CustomerID = @CustomerId AND ProviderID = @ProviderId) OR (CustomerID = @ProviderId AND ProviderID = @CustomerId) ORDER BY MessageID"
+        ' SQL query to select the latest message from each conversation
+        Dim query As String = "SELECT CustomerMessage, MessageText FROM Messages " &
+                              "WHERE (CustomerID = @CustomerId AND ProviderID = @ProviderId) OR (CustomerID = @ProviderId AND ProviderID = @CustomerId) " &
+                              "ORDER BY SentDateTime"
 
         ' Create a new SQL connection
         Using connection As New SqlConnection(connectionString)
@@ -127,30 +128,17 @@ Public Class CustomerChatInterface
 
                     ' Iterate through the result set and append messages to chat history
                     While reader.Read()
-                        ' Determine whether the message was sent by the provider or the customer
-                        ' Determine whether the message was sent by the provider or the customer
-                        Dim senderId As Integer = Convert.ToInt32(reader("CustomerID"))
-
-                        Dim senderType As String
-                        If senderId = providerId Then
-                            senderType = "Provider"
-                        ElseIf senderId = customerId Then
-                            senderType = "Customer"
-                        Else
-                            ' Handle the case where senderId does not match either providerId or customerId
-                            senderType = "Unknown" ' Or you can skip this message entirely
+                        ' Check if CustomerMessage column is not null before appending
+                        If Not reader.IsDBNull(reader.GetOrdinal("CustomerMessage")) Then
+                            ' Append the message from the customer on the right side
+                            chatHistory.AppendLine("<div style='text-align: right;'><p style='background-color: #DCF8C6; display: inline-block; padding: 10px; border-radius: 10px;'>" & reader("CustomerMessage").ToString() & "</p></div>")
                         End If
 
-                        ' Debugging statements
-                        Console.WriteLine("SenderId: " & senderId)
-                        Console.WriteLine("CustomerId: " & customerId)
-                        Console.WriteLine("ProviderId: " & providerId)
-                        Console.WriteLine("SenderType: " & senderType)
-
-
-
-                        ' Append the message with the sender's identifier to the chat history string builder
-                        chatHistory.AppendLine("<p><strong>" & senderType & ":</strong> " & reader("MessageText").ToString() & "</p>")
+                        ' Check if MessageText column is not null before appending
+                        If Not reader.IsDBNull(reader.GetOrdinal("MessageText")) Then
+                            ' Append the message from the provider on the left side
+                            chatHistory.AppendLine("<div style='text-align: left;'><p style='background-color: #E5E5EA; display: inline-block; padding: 10px; border-radius: 10px;'>" & reader("MessageText").ToString() & "</p></div>")
+                        End If
                     End While
 
                 Catch ex As Exception
@@ -165,12 +153,14 @@ Public Class CustomerChatInterface
         Return chatHistory.ToString()
     End Function
 
+
+
     Private Sub InsertMessage(customerId As Integer, providerId As Integer, messageText As String)
         ' Your connection string to the SQL Server database
         Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
 
-        ' SQL query to insert a new message into the Messages table
-        Dim query As String = "INSERT INTO Messages (CustomerId, ProviderId, MessageText) VALUES (@CustomerId, @ProviderId, @MessageText)"
+        ' SQL query to insert a new customer message into the Messages table
+        Dim query As String = "INSERT INTO Messages (CustomerId, ProviderId, CustomerMessage) VALUES (@CustomerId, @ProviderId, @CustomerMessage)"
 
         ' Create a new SQL connection
         Using connection As New SqlConnection(connectionString)
@@ -179,21 +169,24 @@ Public Class CustomerChatInterface
                 ' Add parameters for customer ID, provider ID, and message text
                 command.Parameters.AddWithValue("@CustomerId", customerId)
                 command.Parameters.AddWithValue("@ProviderId", providerId)
-                command.Parameters.AddWithValue("@MessageText", messageText)
+                command.Parameters.AddWithValue("@CustomerMessage", messageText)
 
                 Try
                     ' Open the database connection
                     connection.Open()
 
-                    ' Execute the SQL command to insert the message
+                    ' Execute the SQL command to insert the customer message
                     command.ExecuteNonQuery()
                 Catch ex As Exception
                     ' Handle any exceptions (e.g., log error, display error message)
                     ' For example:
-                    ' Console.WriteLine("Error inserting message: " & ex.Message)
+                    ' Console.WriteLine("Error inserting customer message: " & ex.Message)
                 End Try
             End Using
         End Using
     End Sub
 
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Response.Redirect("CustomerHistory.aspx")
+    End Sub
 End Class

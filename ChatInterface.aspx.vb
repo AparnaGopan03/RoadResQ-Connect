@@ -7,7 +7,7 @@ Public Class ChatInterface
         DisplayChatHistory()
     End Sub
 
-    Protected Sub btnStartChat_Click(sender As Object, e As EventArgs)
+    Protected Sub btnStartChat_Click(sender As Object, e As EventArgs) Handles btnStartChat.Click
         ' Get the logged in provider's username from the session
         Dim providerUsername As String = Session("Username")
 
@@ -145,7 +145,6 @@ Public Class ChatInterface
         End If
     End Sub
 
-
     Private Function GetChatHistory(providerId As Integer, customerId As Integer) As String
         Dim chatHistory As New StringBuilder()
 
@@ -154,7 +153,7 @@ Public Class ChatInterface
             Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
 
             ' SQL query to fetch all messages for the given provider and customer
-            Dim query As String = "SELECT customerID, providerID, MessageText FROM Messages WHERE (ProviderID = @ProviderID AND CustomerID = @CustomerID) OR (ProviderID = @CustomerID AND CustomerID = @ProviderID) ORDER BY MessageID"
+            Dim query As String = "SELECT CustomerMessage, MessageText FROM Messages WHERE (ProviderID = @ProviderID AND CustomerID = @CustomerID) OR (ProviderID = @CustomerID AND CustomerID = @ProviderID) ORDER BY MessageID"
 
             Using connection As New SqlConnection(connectionString)
                 Using command As New SqlCommand(query, connection)
@@ -166,15 +165,20 @@ Public Class ChatInterface
 
                     ' Iterate through the result set and append messages to chat history
                     While reader.Read()
-                        Dim senderId As Integer = Convert.ToInt32(reader("providerID"))
-                        Dim receiverId As Integer = Convert.ToInt32(reader("customerID"))
-                        Dim messageText As String = reader("MessageText").ToString()
+                        Dim customerMessage As String = If(Not reader.IsDBNull(reader.GetOrdinal("CustomerMessage")), reader("CustomerMessage").ToString(), "")
+                        Dim messageText As String = If(Not reader.IsDBNull(reader.GetOrdinal("MessageText")), reader("MessageText").ToString(), "")
 
-                        ' Determine whether the message was sent by the provider or the customer
-                        Dim senderType As String = If(senderId = providerId, "Provider", "Customer")
+                        ' Check if either CustomerMessage or MessageText is not null before appending
+                        If Not String.IsNullOrEmpty(customerMessage) OrElse Not String.IsNullOrEmpty(messageText) Then
+                            ' Append the message to chat history
+                            If Not String.IsNullOrEmpty(customerMessage) Then
+                                chatHistory.AppendLine("<div style='text-align: left;'><p style='background-color: #DCF8C6; display: inline-block; padding: 10px; border-radius: 10px;'>" & reader("CustomerMessage").ToString() & "</p></div>")
 
-                        ' Append the message to chat history
-                        chatHistory.AppendLine("<p><strong>" & senderType & ":</strong> " & messageText & "</p>")
+                            ElseIf Not String.IsNullOrEmpty(messageText) Then
+                                chatHistory.AppendLine("<div style='text-align: right;'><p style='background-color: #DCF8C6; display: inline-block; padding: 10px; border-radius: 10px;'>" & reader("messageText").ToString() & "</p></div>")
+
+                            End If
+                        End If
                     End While
                 End Using
             End Using
@@ -188,4 +192,7 @@ Public Class ChatInterface
 
 
 
+    Protected Sub btnStartChat_Click1(sender As Object, e As EventArgs) Handles Button1.Click
+        Response.Redirect("ProviderProfile.aspx")
+    End Sub
 End Class

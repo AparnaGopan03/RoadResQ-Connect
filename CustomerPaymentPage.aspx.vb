@@ -12,7 +12,7 @@ Public Class CustomerPaymentPage
 
             If Not String.IsNullOrEmpty(customerId) Then
                 Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
-                Dim query As String = "SELECT servicename, basecost, extracost, extracostdetails " &
+                Dim query As String = "SELECT servicename, basecost, extracost, extracostdetails,totalcost " &
                                       "FROM paymentdetail " &
                                       "WHERE customerid = @CustomerId"
 
@@ -32,6 +32,7 @@ Public Class CustomerPaymentPage
                                 LabelBaseCost.Text = Convert.ToDecimal(reader("basecost")).ToString("C")
                                 LabelExtraCost.Text = Convert.ToDecimal(reader("extracost")).ToString("C")
                                 LabelExtraCostDetails.Text = reader("extracostdetails").ToString()
+                                Label1.Text = reader("totalcost").ToString()
 
                             Else
                                 ' No payment details found for the provided customer ID

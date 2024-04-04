@@ -212,7 +212,7 @@ Public Class CustomerServiceRequest
     End Sub
 
 
-   
+
 
     Private Function CalculateDistance(latitude1 As Double, longitude1 As Double, latitude2 As Double, longitude2 As Double) As Double
         Dim earthRadius As Double = 6371 ' Earth radius in kilometers
@@ -288,3 +288,4 @@ Public Class CustomerServiceRequest
     End Function
 
 End Class
+

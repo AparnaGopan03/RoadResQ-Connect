@@ -93,7 +93,17 @@ Public Class ProviderServiceRequest
                 ' Update the status of the service request to "Rejected"
                 UpdateServiceRequestStatus(requestId, "Rejected")
                 ' Set the status in the GridView
-                SetStatusInGridView(index, "Rejected")
+
+                'SetStatusInGridView(index, "Rejected")
+                ' Assuming you have variables to store the required values
+                Dim currentMechanicId As Integer = GetMechanicId() ' Implement this method to get the current mechanic's ID
+                Dim customerLatitude As Double = GetCustomerLatitude(requestId) ' Implement this method to get the customer's latitude for the given request ID
+                Dim customerLongitude As Double = GetCustomerLongitude(requestId) ' Implement this method to get the customer's longitude for the given request ID
+
+                ' Call the ReassignServiceRequest method with all required parameters
+                ReassignServiceRequest(requestId, currentMechanicId, customerLatitude, customerLongitude)
+
+
                 '' Inform the customer about the rejection
                 'InformCustomer(requestId, "Rejected")
             End If
@@ -214,7 +224,139 @@ Public Class ProviderServiceRequest
     End Sub
 
    
-    Protected Sub GridViewRequests_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridViewRequests.SelectedIndexChanged
-
+   Private Sub ReassignServiceRequest(ByVal requestId As Integer, ByVal currentMechanicId As Integer, ByVal customerLatitude As Double, ByVal customerLongitude As Double)
+        Dim newMechanicId As Integer = FindAnotherMechanic(currentMechanicId, customerLatitude, customerLongitude)
+        If newMechanicId <> 0 Then
+            UpdateProviderId(requestId, newMechanicId)
+        Else
+            ' Handle the case where no other mechanic is available
+            ' You can display a message or take any other appropriate action
+        End If
     End Sub
+
+
+    Private Function FindAnotherMechanic(ByVal currentMechanicId As Integer, ByVal customerLatitude As Double, ByVal customerLongitude As Double) As Integer
+        Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
+        Dim query As String = "SELECT providerid, latitude, longitude FROM ServiceProvider WHERE providerid <> @currentMechanicId"
+
+        Dim availableMechanicId As Integer = 0
+        Dim minDistance As Double = Double.MaxValue
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@currentMechanicId", currentMechanicId)
+
+                connection.Open()
+                Dim reader As SqlDataReader = command.ExecuteReader()
+
+                While reader.Read()
+                    Dim mechanicId As Integer = Convert.ToInt32(reader("providerid"))
+                    Dim mechanicLatitude As Double = Convert.ToDouble(reader("latitude"))
+                    Dim mechanicLongitude As Double = Convert.ToDouble(reader("longitude"))
+
+                    ' Calculate distance between customer and mechanic
+                    Dim distance As Double = CalculateDistance(customerLatitude, customerLongitude, mechanicLatitude, mechanicLongitude)
+
+                    ' Check if the mechanic is closer than the current minimum distance
+                    If distance < minDistance Then
+                        minDistance = distance
+                        availableMechanicId = mechanicId
+                    End If
+                End While
+            End Using
+        End Using
+
+        Return availableMechanicId
+    End Function
+
+    Private Function CalculateDistance(ByVal lat1 As Double, ByVal lon1 As Double, ByVal lat2 As Double, ByVal lon2 As Double) As Double
+        Dim earthRadius As Double = 6371 ' Radius of the Earth in kilometers
+
+        ' Convert latitude and longitude from degrees to radians
+        Dim dLat As Double = DegreeToRadian(lat2 - lat1)
+        Dim dLon As Double = DegreeToRadian(lon2 - lon1)
+
+        ' Apply Haversine formula
+        Dim a As Double = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +
+                          Math.Cos(DegreeToRadian(lat1)) * Math.Cos(DegreeToRadian(lat2)) *
+                          Math.Sin(dLon / 2) * Math.Sin(dLon / 2)
+        Dim c As Double = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a))
+        Dim distance As Double = earthRadius * c
+
+        Return distance
+    End Function
+
+    Private Function DegreeToRadian(ByVal deg As Double) As Double
+        Return deg * (Math.PI / 180)
+    End Function
+
+
+    Private Sub UpdateProviderId(ByVal requestId As Integer, ByVal mechanicId As Integer)
+        ' Update the providerid column of the service request with the ID of the new mechanic
+        Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
+        Dim query As String = "UPDATE CServiceRequest SET providerid = @mechanicId WHERE requestid = @requestId"
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@mechanicId", mechanicId)
+                command.Parameters.AddWithValue("@requestId", requestId)
+
+                connection.Open()
+                command.ExecuteNonQuery()
+            End Using
+        End Using
+    End Sub
+
+    Private Function GetCustomerLatitude(ByVal requestId As Integer) As Double
+        ' Retrieve the latitude of the customer associated with the given request ID
+        Dim latitude As Double = 0
+
+        ' Example implementation:
+        ' Query the database to get the latitude based on the request ID
+        Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
+        Dim query As String = "SELECT latitude FROM CServiceRequest WHERE RequestID = @RequestId"
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@RequestId", requestId)
+
+                connection.Open()
+                Dim result As Object = command.ExecuteScalar()
+
+                ' Check if the result is not null or DBNull
+                If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
+                    latitude = Convert.ToDouble(result)
+                End If
+            End Using
+        End Using
+
+        Return latitude
+    End Function
+
+    Private Function GetCustomerLongitude(ByVal requestId As Integer) As Double
+        ' Retrieve the longitude of the customer associated with the given request ID
+        Dim longitude As Double = 0
+
+        ' Example implementation:
+        ' Query the database to get the longitude based on the request ID
+        Dim connectionString As String = "Data Source=LAPTOP-SFCGJITP;Initial Catalog=Roadside Assistance;User ID=sa;Password=123;"
+        Dim query As String = "SELECT longitude FROM CServiceRequest WHERE RequestID = @RequestId"
+
+        Using connection As New SqlConnection(connectionString)
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@RequestId", requestId)
+
+                connection.Open()
+                Dim result As Object = command.ExecuteScalar()
+
+                ' Check if the result is not null or DBNull
+                If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
+                    longitude = Convert.ToDouble(result)
+                End If
+            End Using
+        End Using
+
+        Return longitude
+    End Function
+
 End Class
